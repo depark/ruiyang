@@ -1,4 +1,4 @@
-"""monitor URL Configuration
+"""ruiyang URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
@@ -13,15 +13,11 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import *
+from django.conf.urls import url
 from django.contrib import admin
-from backend import views
-
+from web import views
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', views.login),
-    url(r'^login/$', views.login),
-    url(r'^index/$',views.account_auth),
-    url(r'^showDashboard$',views.showDashboard),
-    url(r'^logout/$',views.logout),
+    url(r'^admin/', admin.site.urls),
+    url(r'^$', views.index),
+
 ]
