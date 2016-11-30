@@ -13,11 +13,19 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+import django
+#from django.conf import settings
+import os
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf.urls.static import *
+from ruiyang import settings
 from web import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index),
 
 ]
+
+media_root = os.path.join(settings.BASE_DIR,'upload')
+urlpatterns +=static('/upload/',document_root=media_root)

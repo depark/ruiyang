@@ -8,6 +8,7 @@ from web.models import *
 def index(request):
     menu = Menu.objects.all()
 
+
     return  render_to_response('index.html',locals())
 
 
