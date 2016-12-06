@@ -14,17 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 import django
-#from django.conf import settings
 import os
-from django.conf.urls import url
+from django.conf.urls import url,include
 from django.contrib import admin
 from django.conf.urls.static import *
 from ruiyang import settings
-from web import views
-import tinymce
+from en import enviews
+from ruiyang import views
+from ru import ruviews
+from sp import spviews
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index),
+    url(r'^en/', enviews.index,name='english'),
+    url(r'^ru/', ruviews.index,name='russian'),
+    url(r'^sp/', spviews.index,name='spain'),
+
 
 ]
 

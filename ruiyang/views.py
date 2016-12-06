@@ -7,6 +7,6 @@ from django.contrib import *
 
 
 def index(request):
-        render_to_response('index.html')
+       return HttpResponseRedirect('/en')
 
 
