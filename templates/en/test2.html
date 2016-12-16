@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset=UTF-8>
+<title>recursion</title>
+<style type="text/css">
+</style>
+<script type="text/javascript">
+    onload = function ()
+    {
+        var cs = document.getElementsByClassName ('tips_12');
+        for ( var i = 0; i < cs.length; i++)
+        {
+            cs[i].index = i;
+            cs[i].onclick = function ()
+            {
+                alert (this.index);
+            }
+        }
+        cs[0].click ();
+    }
+</script>
+</head>
+<body>
+    <div class="111" style="">
+        <div class="cell_111">
+            <a class="tips_12" href="#">第一项</a> <a class="btn_32" href="#">第二项</a>
+        </div>
+    </div>
+</body>
+</html>

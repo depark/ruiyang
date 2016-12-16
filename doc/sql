@@ -1,0 +1,28 @@
+
+
+
+首页
+     首页          banner图片  主标题 ，（副标题）， 详细内容
+	 
+	 
+	 公司历程      事件标题，事件详情 图片 是否首页显示
+	 
+	 产品          产品名称  产品介绍 产品图片  产品优势
+	 
+	 公司信息      公司名称，公司地址，公司联系号码
+
+	 意见          姓名   公司名   年龄  国家 email tel  留言内容
+	 
+	 留言          留言内容   留言人姓名   留言人头像
+
+	 case
+	 
+	菜单   home   products about-us case technology contact-us  	
+	 
+	 
+	 
+http://ruiyang.industrialmanufacturer.net/
+
+嵌套关联对象nested inline
+安装django-nested-inline
+pip install django-nested-inline

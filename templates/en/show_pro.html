@@ -1,0 +1,14 @@
+{% extends 'en/base.html' %}
+{% load staticfiles %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block indexcontent %}
+{% for i in img %}
+ <img src="/upload/{{ i.image }}">
+{% endfor %}
+  <h2>{{ pro.name }}</h2>
+  <p>{{ pro.reduce }}</p>
+
+
+{% endblock %}

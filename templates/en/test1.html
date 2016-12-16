@@ -1,0 +1,16 @@
+<form action='.' method='POST'>
+    {{ form.captcha }}
+    <input type="submit" />
+    <button class='js-captcha-refresh'>刷新</button>
+</form>
+<script>
+$('.captcha').click(function(){
+    $form = $(this).parents('form');
+
+    $.getJSON($(this).data('url'), {}, function(json) {
+        // This should update your captcha image src and captcha hidden input
+    });
+
+    return false;
+});
+</script>

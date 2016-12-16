@@ -21,16 +21,14 @@ from django.conf.urls.static import *
 from ruiyang import settings
 from en import enviews
 from ruiyang import views
-from ru import ruviews
-from sp import spviews
+import captcha.urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index),
-    url(r'^en/', enviews.index,name='english'),
-    url(r'^ru/', ruviews.index,name='russian'),
-    url(r'^sp/', spviews.index,name='spain'),
-
+    url(r'^$', enviews.index,name='english'),
+    url(r'^product/$',enviews.pro,name='product'),
+    url(r'^product/(?P<pid>\d{1,3})/$',enviews.show_pro_detail,name='show_pro'),
+    url(r'^captcha/',include('captcha.urls')),
 
 ]
 
@@ -38,3 +36,4 @@ media_root = os.path.join(settings.BASE_DIR,'upload')
 site_root = os.path.join(settings.BASE_DIR,'media')
 urlpatterns +=static('/upload/',document_root=media_root)
 urlpatterns +=static('/js/',document_root=site_root)
+

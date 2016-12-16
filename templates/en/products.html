@@ -1,0 +1,16 @@
+{% extends 'en/base.html' %}
+
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block indexcontent %}
+{% for i in p_list %}
+ <a href="{% url 'show_pro' i.id %}">
+  <h2>{{ i.name }}</h2></a>
+  <p>{{ i.reduce }}</p>
+<hr>
+{% endfor %}
+
+
+
+{% endblock %}

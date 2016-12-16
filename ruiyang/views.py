@@ -1,6 +1,6 @@
 from django.shortcuts import *
 from django.contrib import *
-from django.contrib import *
+
 
 
 

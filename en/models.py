@@ -1,11 +1,13 @@
-
+#-*-coding=utf-8 -*-
 from django.db import models
-
+from captcha.fields import *
+from django import forms
 
 
 # Create your models here.
 
-
+class CaptchaTestForm(forms.Form):
+    captcha = CaptchaField()
 
 class Menu(models.Model):
     '''
@@ -24,6 +26,9 @@ class Menu(models.Model):
         ordering = ['id']
 
 
+
+
+
 class Product(models.Model):
     '''
     产品
@@ -31,7 +36,8 @@ class Product(models.Model):
     name = models.CharField('产品名称',max_length=100,unique=True,null=False)
     reduce = models.TextField('产品介绍')
     url = models.URLField('产品链接',max_length=50,null=True,blank=True)
-    img = models.ImageField('产品图片',upload_to='products',null=True)
+
+
 
     def __str__(self):
         return self.name
@@ -42,3 +48,15 @@ class Product(models.Model):
 
 
 
+class Images(models.Model):
+    '''
+    产品图片
+    '''
+
+    name = models.ForeignKey(Product)
+    image = models.ImageField(verbose_name='产品图片',upload_to='products',null=True)
+
+
+
+    class Meta:
+        verbose_name_plural = '产品图片'
