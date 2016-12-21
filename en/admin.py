@@ -20,14 +20,60 @@ class list_menu(admin.ModelAdmin):
 
 
 class productadmin(NestedStackedInline):
-    model = Images
+    model = Pro_Images
     fk_name = 'name'
 
-class  productuser(NestedModelAdmin,admin.ModelAdmin):
-    list_display = ('name', 'reduce', 'url',)
-    model = Product
-    inlines = [productadmin]
+class  productuser(admin.ModelAdmin):
+    list_display = ('name', 'reduce','index','image' )
+
+
+
+class companyadmin(NestedStackedInline):
+    model = Com_cer
+    fk_name = 'name'
+
+class companyuse(NestedModelAdmin,admin.ModelAdmin):
+    model = Com_info
+    inlines = [companyadmin]
+
+class newsadmin(NestedStackedInline):
+    model = News_Images
+    fk_name = 'name'
+
+class newsuse(NestedModelAdmin,admin.ModelAdmin):
+    list_display = ('title','context','date')
+    model = News
+    inlines = [newsadmin]
+
+class exhiadmin(NestedStackedInline):
+    model = Exhi_Image
+    fk_name = 'name'
+
+class exhiuse(NestedModelAdmin,admin.ModelAdmin):
+    list_display = ('title','context')
+    model = Exhi
+    inlines = [exhiadmin]
+
+
+class case(admin.ModelAdmin):
+
+    list_display = ('name','context','head')
+
+
+class Technologyuse(admin.ModelAdmin):
+    list_display = ('ques','ans')
+
+class  contach(admin.ModelAdmin):
+    list_display = ('name','company','name','tel','country','email','requ')
+
+
 
 
 admin.site.register(Menu,list_menu)
 admin.site.register(Product,productuser)
+admin.site.register(News,newsuse)
+admin.site.register(Com_info,companyuse)
+admin.site.register(Exhi,exhiuse)
+admin.site.register(Case,case)
+admin.site.register(Technology,Technologyuse)
+admin.site.register(Contect,contach)
