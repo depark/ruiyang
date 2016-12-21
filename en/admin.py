@@ -24,7 +24,7 @@ class productadmin(NestedStackedInline):
     fk_name = 'name'
 
 class  productuser(admin.ModelAdmin):
-    list_display = ('name', 'reduce','index','image' )
+    list_display = ('name', 'adver','reduce','index','image' )
 
 
 

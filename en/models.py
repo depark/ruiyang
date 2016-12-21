@@ -33,7 +33,7 @@ class Product(models.Model):
     '''
     产品
     '''
-    name = models.CharField('产品名称',max_length=100,unique=True,null=False)
+    name = models.CharField(verbose_name='产品名称',max_length=100,unique=True,null=False)
     adver = models.TextField(verbose_name='产品优势',null=True)
     reduce = models.TextField(verbose_name='产品介绍')
     index = models.BooleanField(verbose_name='是否展示首页',default=False)
@@ -51,6 +51,7 @@ class Product(models.Model):
 
 
 
+
 class Pro_Images(models.Model):
     '''
     产品图片
@@ -65,6 +66,7 @@ class Pro_Images(models.Model):
         verbose_name_plural = '产品图片'
 
 
+
 class Com_info(models.Model):
     '''
     公司信息
@@ -74,6 +76,7 @@ class Com_info(models.Model):
     class Meta:
         verbose_name = '公司信息'
         verbose_name_plural = '公司信息'
+
 
 class Com_cer(models.Model):
     '''
@@ -85,6 +88,7 @@ class Com_cer(models.Model):
 
     class Meta:
         verbose_name_plural = '公司证书'
+
 
 
 
@@ -102,6 +106,7 @@ class News(models.Model):
 
 
 
+
 class News_Images(models.Model):
     '''
     新闻图片
@@ -112,6 +117,7 @@ class News_Images(models.Model):
 
     class Meta:
         verbose_name_plural = '新闻图片'
+
 
 
 
@@ -129,12 +135,14 @@ class Exhi(models.Model):
 
 
 
+
 class Exhi_Image(models.Model):
     name = models.ForeignKey(Exhi)
     image = models.ImageField(verbose_name='展会图片',upload_to='exhi')
 
     class Meta:
         verbose_name_plural = '展会图片'
+
 
 
 
@@ -148,6 +156,7 @@ class Case(models.Model):
         verbose_name = '客户案例'
         verbose_name_plural = '客户案例'
 
+
 class Technology(models.Model):
     '''
     科技
@@ -159,6 +168,7 @@ class Technology(models.Model):
     class Meta:
         verbose_name = '科技'
         verbose_name_plural = '科技'
+
 
 
 class Contect(models.Model):
@@ -175,3 +185,4 @@ class Contect(models.Model):
     class Meta:
         verbose_name = '客户意见'
         verbose_name_plural = '客户意见'
+

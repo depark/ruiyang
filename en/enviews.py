@@ -34,7 +34,9 @@ def pro(request):
 def show_pro_detail(request,pid):
     pro = Product.objects.get(id = pid)
     title = pro.name
-    img = Images.objects.filter(name_id = pid)
+    print(pro.name,pro.image)
+    img = Pro_Images.objects.filter(name_id = pid)
+
 
 
     return render_to_response('en/show_pro.html',locals())
