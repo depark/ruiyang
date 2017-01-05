@@ -27,8 +27,11 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', enviews.index,name='english'),
     url(r'^product/$',enviews.pro,name='product'),
+    url(r'^test/$',views.test1,name='test'),
+    url(r'^search/$',views.search,name='search'),
     url(r'^product/(?P<pid>\d{1,3})/$',enviews.show_pro_detail,name='show_pro'),
     url(r'^captcha/',include('captcha.urls')),
+
 
 ]
 

@@ -1,15 +1,5 @@
-  <th width="121" height="40" align="right"><span> *</span> 验 证 码：</th>
-                      <td width="242" height="40" align="left">{{ form.captcha }}
-                        <script type="text/javascript">
-                            $(document).on('click',"captcha",function(){ //点击图片刷新
-                                var tmp = Math.random().toString();
-                                $.get("?newsn=1&tmp="+tmp, function(result){
-                                    $('.captcha').attr("src", result);
-                                    $('#id_captcha_0').attr("value", result.split('/')[3]);
-                                });
-                            return false;
-                        });
-                        </script>
-                      </td>
-                      <td width="237" height="40" class="span-not"><span id="capCode"> </span></td>
-                    </tr>
+<form method="post" action="/search/">
+    <input type="text"  name="search" placeholder="search...."><br>
+    <input type="file" name="file"><br>
+    <input type="submit" value="搜索">
+</form>
