@@ -21,7 +21,7 @@ from django.conf.urls.static import *
 from ruiyang import settings
 from en import enviews
 from ruiyang import views
-import captcha.urls
+
 from django.db.models import permalink
 from DjangoUeditor import urls as DjangoUeditor_urls
 
@@ -37,7 +37,7 @@ url(r'^news/(?P<news_id>[0-9A-Za-z]*)/$',enviews.news_detail,name='news'),
     url(r'^search/$',views.search,name='search'),
     #url(r'^product/(?P<pname>\d{1,3})/$',enviews.show_pro_detail,name='show_pro'),
     url(r'^product/(?P<pname>[0-9A-Za-z]+)/$',enviews.show_pro_detail,name='show_pro'),
-    url(r'^captcha/',include('captcha.urls')),
+ #   url(r'^captcha/',include('captcha.urls')),
     url(r'^ueditor/', include(DjangoUeditor_urls)),
 
 ]

@@ -1,22 +1,23 @@
+# -*- coding: UTF-8 -*-
 from django.contrib import *
 from django.shortcuts import *
 from en.models import *
-from captcha.helpers import *
+
 from django.contrib import staticfiles
 
 
 
 
 def index(request):
-    print(request.LANGUAGE_CODE)
-    if request.method == 'POST':
-        form = CaptchaTestForm(request.POST)
-        if form.is_valid():
-            human = True
-
-            return HttpResponse('welcome')
-    else:
-        form = CaptchaTestForm()
+#    print(request.LANGUAGE_CODE)
+#    if request.method == 'POST':
+#        form = CaptchaTestForm(request.POST)
+#        if form.is_valid():
+#            human = True#
+#
+#            return HttpResponse('welcome')
+#    else:
+#        form = CaptchaTestForm()
 
 #    if request.GET['newsn'] == '1':
 #        csn = CaptchaStore.generate_key()

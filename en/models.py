@@ -1,13 +1,11 @@
 #-*-coding=utf-8 -*-
 from django.db import models
-from captcha.fields import *
+
 from django import forms
 from DjangoUeditor.models import UEditorField
 
 # Create your models here.
 
-class CaptchaTestForm(forms.Form):
-    captcha = CaptchaField()
 
 class Menu(models.Model):
     '''

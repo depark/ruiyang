@@ -1,3 +1,5 @@
+# -*- coding: UTF-8 -*-
+
 """
 Django settings for ruiyang project.
 
@@ -38,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'nested_inline',
-    'captcha',
     'en',
     'DjangoUeditor',
 ]
