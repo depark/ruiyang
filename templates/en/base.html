@@ -1,3 +1,5 @@
+{% load i18n %}
+
 
 <!DOCTYPE html>
 <html>
@@ -84,21 +86,21 @@
 				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
 					<nav class="menu menu--horatio">
 						<ul class="nav navbar-nav menu__list">
-							<li class="menu__item menu__item--current"><a href="/" class="menu__link">Home</a></li>
-							<li class="menu__item"><a href="/product" class="menu__link">Products</a></li>
-							<li class="menu__item"><a href="codes.html" class="menu__link">About Us</a></li>
-							<li class="menu__item"><a href="gallery.html" class="menu__link">Case</a></li>
-							<li class="menu__item"><a href="gallery.html" class="menu__link">Technology</a></li>
-							<li class="menu__item"><a href="contact.html" class="menu__link">Contact Us</a></li>
+							<li class="menu__item menu__item--current"><a href="/" class="menu__link">{% trans 'Home' %}</a></li>
+							<li class="menu__item"><a href="/product" class="menu__link">{% trans 'Products' %}</a></li>
+							<li class="menu__item"><a href="codes.html" class="menu__link">{% trans 'About Us' %}</a></li>
+							<li class="menu__item"><a href="gallery.html" class="menu__link">{% trans 'Case' %}</a></li>
+							<li class="menu__item"><a href="gallery.html" class="menu__link">{% trans 'Technology' %}</a></li>
+							<li class="menu__item"><a href="contact.html" class="menu__link">{% trans 'Contact Us' %}</a></li>
 						</ul>
 					</nav>
 				</div>
 			</nav>
 		</div>
 	</div>
-
+{% autoescape off %}
 {% block indexcontent %}{% endblock %}
-
+{% endautoescape %}
 {% block footer %}
 <!-- contact -->
 <div class="contact">

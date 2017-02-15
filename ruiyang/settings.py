@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'nested_inline',
     'captcha',
     'en',
+    'DjangoUeditor',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -112,17 +113,21 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-#LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 #LANGUAGE_CODE = 'zh-cn'
 
-#TIME_ZONE = 'UTC'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
 
-
+LANGUAGES = (
+    ('en', ('English')),
+    ('zh_hans', ('中文简体')),
+    ('zh_hant', ('中文繁體')),
+)
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
@@ -134,6 +139,7 @@ STATICFILES_DIRS = (
     ('images',os.path.join(STATIC_ROOT,'images')),
     ('fonts', os.path.join(STATIC_ROOT, 'fonts')),
 )
+LOCALE_PATHS = (os.path.join(BASE_DIR,'local'),)
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',

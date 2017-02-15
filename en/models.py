@@ -2,7 +2,7 @@
 from django.db import models
 from captcha.fields import *
 from django import forms
-
+from DjangoUeditor.models import UEditorField
 
 # Create your models here.
 
@@ -97,7 +97,9 @@ class News(models.Model):
     新闻
     '''
     title = models.CharField('标题',max_length=30)
-    context = models.TextField('内容')
+    context = UEditorField('内容',height=300, width=1000,
+        default=u'', blank=True, imagePath="news",
+        toolbars='besttome', filePath='files')
     date = models.DateField(auto_now=True)
 
     class Meta:

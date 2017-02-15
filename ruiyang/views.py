@@ -6,6 +6,7 @@ from django.contrib import *
 
 
 
+
 def index(request):
        return HttpResponseRedirect('/en')
 
@@ -33,3 +34,5 @@ def search(request):
        a=request.POST['search']
        print(request.POST['search'])
        return HttpResponse(a)
+
+

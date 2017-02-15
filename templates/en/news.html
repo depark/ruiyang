@@ -1,0 +1,21 @@
+{% extends 'en/base.html' %}
+{% load staticfiles %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block indexcontent %}
+
+{% if is_list %}
+ {% for new in news %}
+ <a href="{% url 'news' new.id %}">{{  new.title }}<br>
+{{ new.context }}<br>
+{{ new.date }}<hr>
+{% endfor %}
+{% else %}
+ {{ news.title }}<br>
+  {{ news.date }}<br>
+ {{ news.context }}<hr>
+{% endif %}
+
+
+{% endblock %}
