@@ -6,44 +6,23 @@ from en.models import *
 # Register your models here.
 
 
-class list_menu(admin.ModelAdmin):
-    list_display = ('id','name','url','time','images')
 
-    fieldsets = (
-        ('菜单信息',{'fields':('id','name','url',)}),
-    )
 
 #  class Media:
 #     js = ('/js/tinymce/js/tinymce/tinymce.min.js',
 #          '/js/textareas.js')
 
+from django.contrib import admin
+from django.contrib.auth.models import Permission
 
 
-class productadmin(NestedStackedInline):
-    model = Pro_Images
-    fk_name = 'name'
+
+
+
 
 class  productuser(admin.ModelAdmin):
-    list_display = ('name', 'adver','reduce','index','image' )
+    list_display = ('name', 'adver','is_index','image' )
 
-
-
-class companyadmin(NestedStackedInline):
-    model = Com_cer
-    fk_name = 'name'
-
-class companyuse(NestedModelAdmin,admin.ModelAdmin):
-    model = Com_info
-    inlines = [companyadmin]
-
-class newsadmin(NestedStackedInline):
-    model = News_Images
-    fk_name = 'name'
-
-class newsuse(NestedModelAdmin,admin.ModelAdmin):
-    list_display = ('title','context','date')
-    model = News
-    inlines = [newsadmin]
 
 class exhiadmin(NestedStackedInline):
     model = Exhi_Image
@@ -54,6 +33,14 @@ class exhiuse(NestedModelAdmin,admin.ModelAdmin):
     model = Exhi
     inlines = [exhiadmin]
 
+class Cer_admin(NestedStackedInline):
+    model = Com_cer
+    fk_name = 'name'
+
+class Cercom_admin(NestedModelAdmin,admin.ModelAdmin):
+    list_display = ('id','name')
+    model = Company
+    inlines = [Cer_admin]
 
 class case(admin.ModelAdmin):
 
@@ -65,15 +52,23 @@ class Technologyuse(admin.ModelAdmin):
 
 class  contach(admin.ModelAdmin):
     list_display = ('name','company','name','tel','country','email','requ')
+    readonly_fields = ('name','company','name','tel','country','email','requ')
+
+class banner_admin(admin.ModelAdmin):
+    list_display = ('id','name','images')
+
+class faq_admin(admin.ModelAdmin):
+    list_display = ('id','question','answer')
 
 
+class News_admin(admin.ModelAdmin):
+    list_display = ('id','title','datetime','context')
 
-
-admin.site.register(Menu,list_menu)
 admin.site.register(Product,productuser)
-admin.site.register(News,newsuse)
-admin.site.register(Com_info,companyuse)
 admin.site.register(Exhi,exhiuse)
 admin.site.register(Case,case)
-admin.site.register(Technology,Technologyuse)
 admin.site.register(Contect,contach)
+admin.site.register(Banner,banner_admin)
+admin.site.register(Company,Cercom_admin)
+admin.site.register(News,News_admin)
+admin.site.register(Faq,faq_admin)

@@ -2,23 +2,20 @@
 
 
 首页
-     首页          banner图片  主标题 ，（副标题）， 详细内容
+     首页          banner图片  3张
+                   product  三个 图片和产品名称
+	               科技图片
+	               产品优势
+	               case 多图片
+	               数字展示
 	 
-	 
-	 公司历程      事件标题，事件详情 图片 是否首页显示
-	 
-	 产品          产品名称  产品介绍 产品图片  产品优势
-	 
-	 公司信息      公司名称，公司地址，公司联系号码
+	 产品详情（下拉）            三个产品，无列表页，产品详情（编辑器）
 
-	 意见          姓名   公司名   年龄  国家 email tel  留言内容
+	 about us （都在一个页面）   展会 图片列表 / news列表   news详情介绍页 / 证书图片集 / 历史图片
 	 
-	 留言          留言内容   留言人姓名   留言人头像
+	 information             faq问答
 
-	 case
-	 
-	菜单   home   products about-us case technology contact-us  	
-	 
+	 contact us
 	 
 	 
 http://ruiyang.industrialmanufacturer.net/

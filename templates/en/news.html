@@ -7,8 +7,7 @@
 
 {% if is_list %}
  {% for new in news %}
- <a href="{% url 'news' new.id %}">{{  new.title }}<br>
-{{ new.context }}<br>
+ <a href="{% url 'news' new.id %}" style="color:red;font-size:40px">{{  new.title }}</a><br>
 {{ new.date }}<hr>
 {% endfor %}
 {% else %}

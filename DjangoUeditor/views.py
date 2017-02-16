@@ -28,9 +28,7 @@ def videofile(filepath,imagefile):
     filelist.insert(1,imagefile)
     return ''.join(filelist)
 def save_upload_file(PostFile,FilePath,action):
-    print('action is %s' % action)
-    print('postfile is %s' % PostFile)
-    print('filepath is %s' % FilePath)
+
     if action == 'uploadfile':
         FilePathWrite = FilePath+'/'+str(PostFile)
     elif action == 'uploadimage':
@@ -239,9 +237,7 @@ def UploadFile(request):
         'size': upload_file_size
          }
 
-    print (OutputPathFormat)
-    print (USettings.gSettings.MEDIA_URL)
-    #print(file)
+
     return HttpResponse(json.dumps(return_info,ensure_ascii=False),content_type="application/javascript")
 
 @csrf_exempt
