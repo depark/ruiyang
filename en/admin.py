@@ -21,7 +21,7 @@ from django.contrib.auth.models import Permission
 
 
 class  productuser(admin.ModelAdmin):
-    list_display = ('name', 'adver','is_index','image' )
+    list_display = ('id','name', 'adver','is_index','image' )
 
 
 class exhiadmin(NestedStackedInline):
@@ -29,7 +29,7 @@ class exhiadmin(NestedStackedInline):
     fk_name = 'name'
 
 class exhiuse(NestedModelAdmin,admin.ModelAdmin):
-    list_display = ('title','context')
+    list_display = ('id','title','context')
     model = Exhi
     inlines = [exhiadmin]
 
@@ -44,7 +44,7 @@ class Cercom_admin(NestedModelAdmin,admin.ModelAdmin):
 
 class case(admin.ModelAdmin):
 
-    list_display = ('name','context','head')
+    list_display = ('name','before','after')
 
 
 class Technologyuse(admin.ModelAdmin):
@@ -64,6 +64,8 @@ class faq_admin(admin.ModelAdmin):
 class News_admin(admin.ModelAdmin):
     list_display = ('id','title','datetime','context')
 
+class Advantage_admin(admin.ModelAdmin):
+    list_display = ('id','name','context','image')
 admin.site.register(Product,productuser)
 admin.site.register(Exhi,exhiuse)
 admin.site.register(Case,case)
@@ -72,3 +74,4 @@ admin.site.register(Banner,banner_admin)
 admin.site.register(Company,Cercom_admin)
 admin.site.register(News,News_admin)
 admin.site.register(Faq,faq_admin)
+admin.site.register(Advantage,Advantage_admin)

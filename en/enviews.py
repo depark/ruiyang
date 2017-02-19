@@ -50,3 +50,23 @@ def news_detail(request,news_id):
     is_list = False
     news = News.objects.get(id=news_id)
     return render_to_response('en/news.html',locals())
+
+def show_cers(request):
+    exhi_ids = []
+    image_list = []
+    exhi_list = Exhi.objects.all()
+    #image_list = Exhi_Image.objects.all().values_list('name__id','image')
+    for i in exhi_list:
+        exhi_ids.append(i.id)
+    exhi_ids.sort()
+    for id in exhi_ids:
+        ima=[]
+        images = Exhi_Image.objects.filter(name_id=id)
+        for im in images:
+            ima.append(im)
+        image_list.append(ima)
+    print(image_list)
+    for i in image_list:
+        for k in i:
+            print(k.image)
+    return render_to_response('en/exhi.html',locals())

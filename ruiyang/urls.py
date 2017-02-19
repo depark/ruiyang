@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', enviews.index,name='english'),
     url(r'^product/$',enviews.pro,name='product'),
+url(r'^cers/$',enviews.show_cers,name='cers'),
     url(r'^test/$',views.test1,name='test'),
     url(r'^news/$',enviews.news),
 url(r'^news/(?P<news_id>[0-9A-Za-z]*)/$',enviews.news_detail,name='news'),

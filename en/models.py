@@ -27,7 +27,7 @@ class Product(models.Model):
     产品
     '''
     name = models.CharField(verbose_name='产品名称',max_length=100,unique=True,null=False)
-    adver = models.TextField(verbose_name='产品优势',null=True)
+    adver = models.TextField(verbose_name='产品优势',null=True,blank=True)
     is_index = models.BooleanField(verbose_name='是否首页展示产品优势',default=1)
     image = models.ImageField(verbose_name='产品首页展示图片',upload_to='product')
     context = UEditorField('产品内容', height=300, width=1000,
@@ -101,16 +101,13 @@ class Exhi(models.Model):
     '''
     展会图片
     '''
-
+    id = models.IntegerField(unique=True,primary_key=True)
     title = models.CharField(max_length=30)
     context = models.TextField('展会内容',null=True)
 
     class Meta:
         verbose_name = '展会'
         verbose_name_plural = '展会'
-
-
-
 
 class Exhi_Image(models.Model):
     name = models.ForeignKey(Exhi)
@@ -122,15 +119,7 @@ class Exhi_Image(models.Model):
 
 
 
-class Case(models.Model):
 
-    head = models.ImageField('用户头像',upload_to='head',)
-    name = models.CharField('用户名',max_length=20)
-    context = models.TextField('用户留言')
-
-    class Meta:
-        verbose_name = '客户案例'
-        verbose_name_plural = '客户案例'
 
 
 class Faq(models.Model):
@@ -162,4 +151,38 @@ class Contect(models.Model):
     class Meta:
         verbose_name = '客户意见'
         verbose_name_plural = '客户意见'
+
+class Case(models.Model):
+    '''
+    案例
+    '''
+    name = models.CharField('部位',max_length=20)
+    before = models.ImageField(verbose_name='before',upload_to='cases',default='null')
+    after = models.ImageField(verbose_name='after',upload_to='cases',default='null')
+
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = '案例对比图'
+        verbose_name_plural = '案例对比图'
+
+
+class Advantage(models.Model):
+    '''
+    首页优势
+    '''
+    name = models.CharField(verbose_name='优势',max_length=20)
+    context = models.CharField(verbose_name='内容',max_length=200)
+    image = models.ImageField(verbose_name='图标',upload_to='advantage',width_field='480',height_field='320')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = '优势'
+        verbose_name_plural = '优势'
+
+
 
