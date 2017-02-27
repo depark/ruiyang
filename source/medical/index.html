@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Home</title>
+		<!-- for-mobile-apps -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<!-- //for-mobile-apps -->
+
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+		<link rel="stylesheet" href="css/jquery-ui.css" />
+		<link rel="stylesheet" href="css/lightbox.css" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/swipebox.css" />
+		<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+		<!-- js -->
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-3.1.1.min.js" ></script>
+		<script type="text/javascript" src="js/numscroller-1.0.js"></script>
+		<script type="text/javascript" src="js/highlight.pack.js" ></script>
+		<script type="text/javascript" src="js/impress.js" ></script>
+		<script type="text/javascript" src="js/jquery.magnific-popup.js" ></script>
+		<script type="text/javascript" src="js/jquery.swipebox.min.js" ></script>
+		<script type="text/javascript" src="js/lightbox-2.6.min.js" ></script>
+		<script type="text/javascript" src="js/numscroller-1.0.js" ></script>
+		<script type="text/javascript" src="js/velocity.min.js" ></script>
+		<script type="text/javascript" src="js/move-top.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+		<script type="text/javascript" src="js/case.js"></script>
+		<script type="text/javascript" src='js/TweenMax.min.js'></script>
+		<script type="text/javascript" src='js/Draggable.min.js'></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event) {
+					event.preventDefault();
+					$('html,body').animate({
+						scrollTop: $(this.hash).offset().top
+					}, 1000);
+				});
+			});
+		</script>
+		<!-- start-smoth-scrolling -->
+
+		<!--start-date-piker-->
+		<script src="js/jquery-ui.js"></script>
+		<script>
+			$(function() {
+				$("#datepicker,#datepicker1").datepicker();
+			});
+		</script>
+		<!--/End-date-piker-->
+		<script src="js/responsiveslides.min.js"></script>
+		<!--animate-->
+		<link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
+		<script src="js/wow.min.js"></script>
+
+		<script>
+			new WOW().init();
+		</script>
+		<!--//end-animate-->
+	</head>
+
+	<body>
+		<!-- header -->
+		<div class="nav-menu dn1" id="nav-menu">
+			<div class="header-bottom" style="padding: 20px 0px 0px 0px;">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+							<div class="logo grid">
+								<div class="grid__item color-3">
+									<h1><a class="link link--nukun" href="index.html"><img src="images/logo.png" alt="logo" style="width: 126px;height: 43px;margin-top: -22px;"></a></h1>
+								</div>
+							</div>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+							<nav class="menu menu--horatio">
+								<ul class="nav navbar-nav menu__list">
+									<li class="menu__item menu__item--current">
+										<a href="index.html" class="menu__link">Home</a>
+									</li>
+									<li class="menu__item">
+										<a href="product-detail-deep.html" class="menu__link">Products</a>
+										<ul>
+											<li>
+												<a href="product-detail-deep.html">Deep</a>
+											</li>
+											<li>
+												<a href="product-detail-derm.html">Derm</a>
+											</li>
+											<li>
+												<a href="product-detail-fine.html">Fine</a>
+											</li>
+										</ul>
+									</li>
+									<li class="menu__item">
+										<a href="about us.html" class="menu__link">About Us</a>
+									</li>
+									<li class="menu__item">
+										<a href="information-FAQ.html" class="menu__link">Information</a>
+									</li>
+									<li class="menu__item">
+										<a href="contact us.html" class="menu__link">Contact Us</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<!-- /.navbar-collapse -->
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<div class="nav-menu dn2" id="nav-menu">
+			<div class="header-top">
+				<div class="logo grid">
+					<div class="grid__item color-3">
+						<h1><a class="link link--nukun" href="index.html"><img src="images/logo.png" alt="logo" style="width: 126px;height: 43px;"></a></h1>
+					</div>
+				</div>
+			</div>
+			<div class="header-bottom">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+						</div>
+						<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+							<nav class="menu menu--horatio">
+								<ul class="nav navbar-nav menu__list">
+									<li class="menu__item menu__item--current">
+										<a href="index.html" class="menu__link">Home</a>
+									</li>
+									<li class="menu__item">
+										<a href="product-detail-deep.html" class="menu__link">Products</a>
+										<ul>
+											<li>
+												<a href="product-detail-deep.html">Deep</a>
+											</li>
+											<li>
+												<a href="product-detail-derm.html">Derm</a>
+											</li>
+											<li>
+												<a href="product-detail-fine.html">Fine</a>
+											</li>
+										</ul>
+									</li>
+									<li class="menu__item">
+										<a href="about us.html" class="menu__link">About Us</a>
+									</li>
+									<li class="menu__item">
+										<a href="information-FAQ.html" class="menu__link">Information</a>
+									</li>
+									<li class="menu__item">
+										<a href="contact us.html" class="menu__link">Contact Us</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<!-- banner -->
+		<div class="banner">
+
+			<script>
+				// You can also use "$(window).load(function() {"
+				$(function() {
+					// Slideshow 4
+					$("#slider3").responsiveSlides({
+						auto: true,
+						pager: true,
+						nav: false,
+						speed: 500,
+						namespace: "callbacks",
+						before: function() {
+							$('.events').append("<li>before event fired.</li>");
+						},
+						after: function() {
+							$('.events').append("<li>after event fired.</li>");
+						}
+					});
+				});
+			</script>
+			<div id="top" class="callbacks_container">
+				<ul class="rslides" id="slider3">
+					<li>
+						<img src="images/banner1.jpg" style="position: relative;width: 100%;height: 100%;" />
+						<div class="banner1">
+						</div>
+					</li>
+					<li>
+						<img src="images/banner2.jpg" style="position: relative;width: 100%;height: 100%;" />
+						<div class="banner2" style="position: absolute;top:0;z-index: 9;left:50%;margin-left: -585px;">
+						</div>
+					</li>
+					<li>
+						<img src="images/banner3.jpg" style="position: relative;width: 100%;height: 100%;" />
+						<div class="banner3">
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<!-- //banner -->
+		<!-- Products -->
+		<div class="ind-team">
+			<div class="container">
+				<!--<h3>Products</h3>-->
+				<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
+					<div class="team-img">
+						<a href="product-detail-deep.html">
+							<img class="img-responsive" src="images/products/reyoungel.jpg" alt=" " />
+							<p class="team-more">FINE dermal filler</p>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
+					<div class="team-img">
+						<a href="product-detail-derm.html">
+							<img class="img-responsive" src="images/products/fine.jpg" alt=" " />
+							<p class="team-more">FINE dermal filler</p>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
+					<div class="team-img">
+						<a href="product-detail-fine.html">
+							<img class="img-responsive" src="images/products/derm.jpg" alt=" " />
+							<p class="team-more">FINE dermal filler</p>
+						</a>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<!-- Products -->
+		<!-- works -->
+		<div class="works" style="background: #F2F2F2;padding: 50px 0;">
+			<div class="container">
+				<div class="col-md-4 about_img wow fadeInRight animated" data-wow-delay=".5s" style="position: relative;">
+					<img src="images/works.png" alt="" style="width: 100%;">
+					<button type="button" class="works_circle" style="position: absolute;left: 200px;top: 100px;"><p class="works_des">Forehead furrows</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 220px;top: 130px;"><p class="works_des">Crow's feet</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 180px;top: 150px;"><p class="works_des">Nose bridge</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 210px;top: 170px;"><p class="works_des">Fill in apple muscle</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 120px;top: 180px;"><p class="works_des1">Fill in apple muscle</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 130px;top: 205px;"><p class="works_des1">Fill in apple muscle</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 160px;top: 230px;"><p class="works_des1">Fill in apple muscle</p></button>
+				</div>
+				<div class="col-md-8 about_img about_img_left">
+					<div class="choose-grid wow fadeInRight animated" data-wow-delay=".5s">
+						<h4>How does HAderm work?</h4>
+						<p>During the aging process, the human face loses fat and volume while the skin loses collagen and elasticity. Through nonsurgical injections, HAderm is specifically designed to add fullness to the cheeks and midface area, which can result in a more natural-looking, youthful appearance.</p>
+						<p>HAderm’s products are formulated to act like your body's own naturally occurring hyaluronic acid, restoring volume to your skin.</p>
+						<div class="col-md-6 about_img about_img_left" style="text-align: center;">
+							<img src="images/skin_01.png" alt="">
+							<p>HA decreased, leading to collagen reduction.</p>
+						</div>
+						<div class="col-md-6 about_img about_img_left" style="text-align: center;">
+							<img src="images/skin_02.png" alt="">
+							<p>Injection of HAderm to restore the skin young.</p>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div>
+				</div>
+			</div>
+		</div>
+		<!-- //works -->
+		<!-- services -->
+		<div class="services">
+			<div class="container">
+				<div class="col-md-4 services_left wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="0s">
+					<h3>Why choose us? </h3>
+					<p class="ser-para">HAderm is made of non-animal and biofermentative origin. We adapt a new cross linking technology to allow the gel has excellent shaping result and natural look.</p>
+					<div class="clearfix"></div>
+				</div>
+				<div class="col-md-8 services_right ">
+					<div class="list-left text-center wow bounceInDown product-adv" data-wow-duration="1.5s" data-wow-delay="0.1s">
+						<span class="glyphicon glyphicon-a product-adv-list-icon" aria-hidden="true"></span>
+						<div class="product-adv-list">
+							<h4> - Safety</h4>
+							<p>It is safe due to non-animal origin and low BDDE residual, cause any negative impact on the skin.</p>
+						</div>
+
+					</div>
+					<div class="list-left text-center no_marg wow bounceInDown product-adv" data-wow-duration="1.5s" data-wow-delay="0.2s">
+						<span class="glyphicon glyphicon-b product-adv-list-icon" aria-hidden="true"></span>
+						<div class="product-adv-list">
+							<h4> - Injection</h4>
+							<p>Smooth extrusion force enables doctors to control the injections easily and safely throughout the procedure.</p>
+						</div>
+					</div>
+					<div class="list-left text-center no_marg wow bounceInDown product-adv" data-wow-duration="1.5s" data-wow-delay="0.3s">
+						<span class="glyphicon glyphicon-c product-adv-list-icon" aria-hidden="true"></span>
+						<div class="product-adv-list">
+							<h4> - Effection</h4>
+							<p>It is long-lasting caused by slow and uniform degradation.</p>
+						</div>
+					</div>
+					<div class="list-left text-center no_marg wow bounceInDown product-adv" data-wow-duration="1.5s" data-wow-delay="0.4s">
+						<span class="glyphicon glyphicon-d product-adv-list-icon" aria-hidden="true"></span>
+						<div class="product-adv-list">
+							<h4> - Service</h4>
+							<p>We can provide professional technical support and personalized custom products.</p>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<!-- //services -->
+
+		<!-- case -->
+		<div class="case">
+			<div class="container">
+				<div class="film_focus" style="background: #90005e;">
+					<div class="film_focus_desc">
+						<ul class="film_focus_nav">
+							<li class="cur"> <b>Full view</b><span>Full view</span> </li>
+							<li> <b>Profile view</b><span>Profile view</span> </li>
+							<li> <b>Full view</b><span>Full view</span> </li>
+							<li> <b>Pro view</b><span>Pro view</span> </li>
+							<li> <b>Focus</b><span>Focus</span> </li>
+						</ul>
+					</div>
+					<div class="film_focus_imgs_wrap">
+						<ul class="film_focus_imgs">
+							<li>
+								<a target="_blank" href="#"><img src="images/before-after/before_01.jpg" /></a>
+							</li>
+							<li>
+								<a target="_blank" href="#"><img src="images/before-after/before_02.jpg" /></a>
+							</li>
+							<li>
+								<a target="_blank" href="#"><img src="images/before-after/before_03.jpg" /></a>
+							</li>
+							<li>
+								<a target="_blank" href="#"><img src="images/before-after/before_04.jpg" /></a>
+							</li>
+							<li>
+								<a target="_blank" href="#"><img src="images/before-after/before_05.jpg" /></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //case -->
+
+		<!-- capabilities -->
+		<div class="capacity">
+			<div class="container">
+				<!--<h3>Capabilities</h3>-->
+				<div class="col-md-3 capabil_grid1 wow fadeInDownBig animated animated text-center" data-wow-delay="0.4s">
+					<div class="capil_text">
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='5700' data-delay='.5' data-increment="3">5700</div>
+						<p>Happy Patients</p>
+					</div>
+				</div>
+				<div class="col-md-3 capabil_grid2 wow fadeInUpBig animated animated text-center" data-wow-delay="0.4s">
+					<div class="capil_text">
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='1700' data-delay='.5' data-increment="2">1700</div>
+						<p>Our Staff</p>
+					</div>
+				</div>
+				<div class="col-md-3 capabil_grid3 wow fadeInDownBig animated animated text-center" data-wow-delay="0.4s">
+					<div class="capil_text">
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='21' data-delay='.5' data-increment="1">21</div>
+						<p>Foundation</p>
+					</div>
+				</div>
+				<div class="col-md-3 capabil_grid4 wow fadeInUpBig animated animated text-center" data-wow-delay="0.4s">
+					<div class="capil_text">
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='2500' data-delay='.5' data-increment="1">2500</div>
+						<p>Clients</p>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<!-- //capabilities -->
+		<!-- contact -->
+		<div class="contact">
+			<div class="container">
+				<div class="col-md-6 contact-right wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s" style="padding-top: 20px;">
+					<h3>Contact Us</h3>
+					<div class="strip" style="margin-top: 5px;"></div>
+					<ul class="con-icons">
+						<li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>0086-21-51698555</li>
+						<li>
+							<a href="mailto:info@reyoungel.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>info@reyoungel.com</a>
+						</li>
+					</ul>
+					<ul class="fb_icons">
+						<li class="hvr-rectangle-out">
+							<a class="fb" href="#"></a>
+						</li>
+						<li class="hvr-rectangle-out">
+							<a class="twit" href="#"></a>
+						</li>
+						<li class="hvr-rectangle-out">
+							<a class="goog" href="#"></a>
+						</li>
+						<li class="hvr-rectangle-out">
+							<a class="pin" href="#"></a>
+						</li>
+						<li class="hvr-rectangle-out">
+							<a class="drib" href="#"></a>
+						</li>
+					</ul>
+					<p class="copy-right" style="margin-top: -30px;">Copyright © Bioha Laboratories Technical. </p>
+				</div>
+
+				<div class="col-md-6 contact-left wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s" style="padding-top: 60px;">
+					<h2>Find a Doctor</h2>
+					<form action="#" method="post" style="margin-top: 10px;">
+						<input type="email" name="Email" placeholder="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+						<input type="submit" value="submit" style="margin-left: -6px; />
+						</form>
+				</div>
+				<div class=" clearfix "></div>
+			</div>
+		</div>
+		<!-- // contact -->
+		
+		<script type="text/javascript " src="js/bootstrap-3.1.1.min.js "></script>
+		<!-- head切换 -->
+		<script>
+			window.onscroll = function() {
+
+				var scrollTop = document.body.scrollTop;
+
+				if(scrollTop >= 500) {
+
+					$(".dn1 ").css("display ", "block ");
+					$(".dn2 ").css("display ", "none ");
+				} else {
+					$(".dn2 ").css("display ", "block ");
+					$(".dn1 ").css("display ", "none ");
+				}
+			}
+		</script>
+			
+
+	</body>
+
+</html>

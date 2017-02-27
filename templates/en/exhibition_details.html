@@ -1,0 +1,314 @@
+{% extends 'en/index.html' %}
+
+{% block head %}
+	<head>
+		<title>About us</title>
+		<!-- for-mobile-apps -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+		<script type="text/javascript" src="/static/js/jquery-2.1.4.min.js" ></script>
+		<!-- js -->
+
+		<style>
+		body{
+  height:0; /*not sure but codepen has some kind of height*/
+}
+.contain .img-holder {
+  width:250px;
+  height:180px;
+  position:absolute;
+  background-color:#fff;
+  box-shadow:0px 1px 6px 3px #ccc;
+  visibility:hidden;
+  opacity:0;
+  top:50px;
+  left:395px;
+  cursor:pointer;
+  z-index:999999;
+}
+
+.contain .img-holder img {
+	margin-top:5px;
+	width: 242px;
+    height: 180px
+}
+
+.contain{
+  position:relative;
+  height:300px;
+  overflow:hidden;
+  width:1040px;
+  margin:0 auto;
+  text-indent:4px;
+  font-weight:bold;
+}
+.scrollbox{
+	width:1040px;
+	margin:0 auto;
+	margin-bottom: 30px;
+	position:relative;
+	height:100px;
+	overflow:hidden;
+}
+.controller{
+  top:20px;
+  left:20px;
+  width:300px;
+  margin:0 auto;
+  position:relative;
+}
+
+.scrolller-contain{
+  width:800px;
+  height:15px;
+  border:1px solid #ccc;
+  border-radius:10px;
+  position:relative;
+  top:50px;
+  left:130px;
+  cursor:pointer;
+}
+.scrolller-contain .scroller{
+   width:100px;
+   height:15px;
+   background-color:#ddd;
+   border-radius:10px;
+   position:absolute;
+   left:0px;
+}
+
+/* For reflection */
+.contain .img-ref{
+  position:relative;
+  left:0;
+  z-index:-1;
+}
+.contain .img-ref img {
+  -webkit-transform: scaleY(-1);
+  -moz-transform: scaleY(-1);
+  -ms-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  transform: scaleY(-1);
+}
+.contain .img-ref:after {
+  content: "";
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(38%, rgba(255, 255, 255, 0)), color-stop(40% rgba(255, 255, 255, 0.67)), color-stop(65% #fff));
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.67) 40%, #fff 65%);
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.67) 40%, #fff 65%);
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.67) 40%, #fff 65%);
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.67) 40%, #fff 65%);
+  background: linear-gradient(top, rgba(255, 255, 255, 0) 38%, rgba(0, 0, 0, 0.67) 40%, #fff 65%);
+}
+		</style>
+	</head>
+{% endblock %}
+
+{% block content %}
+
+		<!-- header -->
+		<div class="nav-menu dn1" id="nav-menu">
+			<div class="header-bottom" style="padding: 20px 0px 0px 0px;">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+							<div class="logo grid">
+								<div class="grid__item color-3">
+									<h1><a class="link link--nukun" href="/"><img src="/static/images/logo.png" alt="logo" style="width: 126px;height: 43px;margin-top: -22px;"></a></h1>
+								</div>
+							</div>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+							<nav class="menu menu--horatio">
+								<ul class="nav navbar-nav menu__list">
+									<li class="menu__item ">
+										<a href="/" class="menu__link">Home</a>
+									</li>
+									<li class="menu__item">
+										<a  class="menu__link">Products</a>
+										<ul>
+											{% for product in products_list %}
+											<li>
+												<a href="{% url 'show_pro' product.name %}">{{ product.name }}</a>
+											</li>
+											{% endfor %}
+										</ul>
+									</li>
+									<li class="menu__item menu__item--current">
+										<a href="/about_us" class="menu__link">About Us</a>
+									</li>
+									<li class="menu__item">
+										<a href="/information" class="menu__link">Information</a>
+									</li>
+									<li class="menu__item ">
+										<a href="/contact_us" class="menu__link ">Contact Us</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<!-- /.navbar-collapse -->
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<div class="nav-menu dn2" id="nav-menu">
+			<div class="header-top">
+				<div class="logo grid">
+					<div class="grid__item color-3">
+						<h1><a class="link link--nukun" href="/"><img src="/static/images/logo.png" alt="logo" style="width: 126px;height: 43px;"></a></h1>
+					</div>
+				</div>
+			</div>
+			<div class="header-bottom">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+						</div>
+						<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+							<nav class="menu menu--horatio">
+								<ul class="nav navbar-nav menu__list">
+									<li class="menu__item ">
+										<a href="/" class="menu__link">Home</a>
+									</li>
+									<li class="menu__item">
+										<a  class="menu__link">Products</a>
+										<ul>
+											{% for product in products_list %}
+											<li>
+												<a href="{% url 'show_pro' product.name %}">{{ product.name }}</a>
+											</li>
+											{% endfor %}
+										</ul>
+									</li>
+									<li class="menu__item menu__item--current">
+										<a href="/about_us" class="menu__link">About Us</a>
+									</li>
+									<li class="menu__item">
+										<a href="/information" class="menu__link">Information</a>
+									</li>
+									<li class="menu__item ">
+										<a href="/contact_us" class="menu__link ">Contact Us</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- banner -->
+
+		<!-- exhibition -->
+
+		<div class="contain" style="margin-top: 140px;">
+            {% for image in images %}
+            <div class="img-holder">
+		<img src="/upload/{{ image.image }}" />
+		<div class="img-ref"><img src="/upload/{{ image.image }}" /></div>
+	</div>
+            {% endfor %}
+        </div>
+
+<div class="scrollbox">
+	<div class="scrolller-contain">
+		<div class="scroller"></div>
+	</div>
+</div>
+
+		<!-- //exhibition -->
+
+{% endblock %}
+
+{% block footer %}
+		<!-- contact -->
+		<div class="contact">
+			<div class="container">
+				<div class="col-md-6 contact-right wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s" style="padding-top: 20px;">
+					<h3>Contact Us</h3>
+					<div class="strip" style="margin-top: 5px;"></div>
+					<ul class="con-icons">
+						<li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>0086-21-51698555</li>
+						<li>
+							<a href="mailto:info@reyoungel.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>info@reyoungel.com</a>
+						</li>
+					</ul>
+					<ul class="fb_icons">
+						<li class="hvr-rectangle-out">
+							<a class="fb" href="#"></a>
+						</li>
+						<li class="hvr-rectangle-out">
+							<a class="twit" href="#"></a>
+						</li>
+						<li class="hvr-rectangle-out">
+							<a class="goog" href="#"></a>
+						</li>
+						<li class="hvr-rectangle-out">
+							<a class="pin" href="#"></a>
+						</li>
+						<li class="hvr-rectangle-out">
+							<a class="drib" href="#"></a>
+						</li>
+					</ul>
+					<p class="copy-right" style="margin-top: -30px;">Copyright © Bioha Laboratories Technical. </p>
+				</div>
+
+				<div class="col-md-6 contact-left wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s" style="padding-top: 60px;">
+					<h2>Find a Doctor</h2>
+					<form action="#" method="post" style="margin-top: 10px;">
+						<input type="email" name="Email" placeholder="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+						<input type="submit" value="submit" style="margin-left: -6px; />
+						</form>
+				</div>
+				<div class=" clearfix "></div>
+			</div>
+		</div>
+		<!--  //   contact -->
+
+		<!--<script type="text/javascript" src='js/jquery.js'></script>-->
+		<script type="text/javascript" src='/static/js/TweenMax.min.js'></script>
+		<script type="text/javascript" src='/static/js/Draggable.min.js'></script>
+		<script type="text/javascript" src="/static/js/index.js"></script>
+		<script type="text/javascript " src="/static/js/bootstrap-3.1.1.min.js "></script>
+		<script>
+			window.onscroll = function() {
+
+				var scrollTop = document.body.scrollTop;
+
+				if(scrollTop >= 500) {
+
+					$(".dn1 ").css("display ", "block ");
+					$(".dn2 ").css("display ", "none ");
+				} else {
+					$(".dn2 ").css("display ", "block ");
+					$(".dn1 ").css("display ", "none ");
+				}
+			}
+		</script>
+
+{% endblock %}
+

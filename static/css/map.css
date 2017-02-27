@@ -36,8 +36,8 @@
   outline: none;
   z-index: 0;
   position: absolute;
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   border-radius: 20px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
@@ -51,7 +51,7 @@
   -webkit-transition: opacity 0.25s ease-in-out 0.25s, width 0.25s ease-in-out 0.25s, height 0.25s ease-in-out 0.25s, z-index 0.25s ease-in-out 0.25s;
           transition: opacity 0.25s ease-in-out 0.25s, width 0.25s ease-in-out 0.25s, height 0.25s ease-in-out 0.25s, z-index 0.25s ease-in-out 0.25s;
   background: rgba(26, 26, 26, 0.85);
-  border: 5px solid #7fcff7;
+  border: 3px solid #7fcff7;
 }
 .distribution-map .map-point .content {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
@@ -66,7 +66,7 @@
   transform: translateX(-50%);
   overflow: overlay;
 }
-.distribution-map .map-point:active, .distribution-map .map-point:focus {
+/*.distribution-map .map-point:hover, .distribution-map .map-point:focus {
   margin: 0;
   padding: 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
@@ -78,7 +78,7 @@
   -webkit-transition: opacity 0.25s ease-in-out, width 0.25s ease-in-out, height 0.25s ease-in-out;
   transition: opacity 0.25s ease-in-out, width 0.25s ease-in-out, height 0.25s ease-in-out;
 }
-.distribution-map .map-point:active .content, .distribution-map .map-point:focus .content {
+.distribution-map .map-point:hover .content, .distribution-map .map-point:focus .content {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
   -moz-transition: opacity 0.25s ease-in-out 0.25s, height 0 ease-in-out 0.25s, overflow 0 ease-in-out 0.25s;
@@ -89,6 +89,7 @@
           transition: opacity 0.25s ease-in-out 0.25s, height 0 ease-in-out 0.25s, overflow 0 ease-in-out 0.25s;
   overflow: hidden;
 }
-.distribution-map .map-point:active .content a:hover, .distribution-map .map-point:active .content a:active, .distribution-map .map-point:focus .content a:hover, .distribution-map .map-point:focus .content a:active {
+.distribution-map .map-point:hover .content a:hover, .distribution-map .map-point:active .content a:active, .distribution-map .map-point:focus .content a:hover, .distribution-map .map-point:focus .content a:active {
   color: #afe1fa;
 }
+*/

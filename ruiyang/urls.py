@@ -24,21 +24,22 @@ from ruiyang import views
 
 from django.db.models import permalink
 from DjangoUeditor import urls as DjangoUeditor_urls
-
+from en.admin import *
 
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', admin_site.urls),
+    #url(r'^user/', admin.site.urls),
     url(r'^$', enviews.index,name='english'),
-    url(r'^product/$',enviews.pro,name='product'),
-url(r'^cers/$',enviews.show_cers,name='cers'),
-    url(r'^test/$',views.test1,name='test'),
-    url(r'^news/$',enviews.news),
-url(r'^news/(?P<news_id>[0-9A-Za-z]*)/$',enviews.news_detail,name='news'),
-    url(r'^search/$',views.search,name='search'),
     #url(r'^product/(?P<pname>\d{1,3})/$',enviews.show_pro_detail,name='show_pro'),
     url(r'^product/(?P<pname>[0-9A-Za-z]+)/$',enviews.show_pro_detail,name='show_pro'),
  #   url(r'^captcha/',include('captcha.urls')),
+    url(r'^about_us/$', enviews.about),
+    url(r'^about_us/exhi/(?P<id>[0-9]+)', enviews.exhi_detail,name='exhi_detail'),
+url(r'^about_us/news/(?P<id>[0-9]+)', enviews.news_detail,name='news_detail'),
+    url(r'^email/(?P<url>[A-Za-z]+)', enviews.get_email),
+    url(r'^information/', enviews.infor,name='information'),
+    url(r'^contact_us/', enviews.contact_us,name='contact'),
     url(r'^ueditor/', include(DjangoUeditor_urls)),
 
 ]

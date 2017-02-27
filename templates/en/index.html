@@ -1,346 +1,417 @@
-{% extends 'en/base.html' %}
+<!DOCTYPE html>
+<html>
+{% block head %}
+	<head>
 
-{% block title %}Home{% endblock %}
+		<title>{{ title }}</title>
+		<!-- for-mobile-apps -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<!-- //for-mobile-apps -->
 
-{% block indexcontent %}
-<!-- banner -->
-<div class="banner">
+		<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+		<link rel="stylesheet" href="/static/css/jquery-ui.css" />
+		<link href="/static/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+		<!-- js -->
+		<script type="text/javascript" src="/static/js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="/static/js/numscroller-1.0.js"></script>
+		<!-- start-smoth-scrolling -->
+		<script type="text/javascript" src="/static/js/move-top.js"></script>
+		<script type="text/javascript" src="/static/js/easing.js"></script>
+		<script type="text/javascript" src="/static/js/case.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event) {
+					event.preventDefault();
+					$('html,body').animate({
+						scrollTop: $(this.hash).offset().top
+					}, 1000);
+				});
+			});
+		</script>
+		<!-- start-smoth-scrolling -->
 
-				<script>
-						// You can also use "$(window).load(function() {"
-						$(function () {
-						 // Slideshow 4
-						$("#slider3").responsiveSlides({
-							auto: true,
-							pager: true,
-							nav: false,
-							speed: 500,
-							namespace: "callbacks",
-							before: function () {
-						$('.events').append("<li>before event fired.</li>");
-						},
-						after: function () {
-							$('.events').append("<li>after event fired.</li>");
-							}
-							});
-						});
-				</script>
-		<div  id="top" class="callbacks_container">
-			<ul class="rslides" id="slider3">
-				<li>
-					<div class="banner1">
-						<div class="container">
-							<div class="banner-info">
-								<h3>Providing<span> Appropriate Health Care </span> For Adult, Seniors and children</h3>
-								<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-								sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-								Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-								adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
-								dolore magnam aliquam quaerat voluptatem.</p>
-								<a href="#book" class="hvr-outline-out button2 scroll">To view more </a>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="banner2">
-						<div class="container">
-							<div class="banner-info2 text-center">
-								<h3>Providing Eye Care <span>Treatments & Surgeries For All Problems</span></h3>
-								<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-								sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-								Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-								adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
-								dolore magnam aliquam quaerat voluptatem.</p>
-								<a href="#book" class="hvr-outline-out button2 scroll">To view more </a>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="banner3">
-						<div class="container">
-							<div class="banner-info">
-								<h3>Providing<span> Appropriate Health Care </span> For Adult, Seniors and children</h3>
-								<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-								sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-								Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-								adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
-								dolore magnam aliquam quaerat voluptatem.</p>
-								<a href="#book" class="hvr-outline-out button2 scroll">To view more </a>
-							</div>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-		<div class="clearfix"></div>
-</div>
-<!-- //banner -->
+		<!--start-date-piker-->
+		<script src="/static/js/jquery-ui.js"></script>
+		<script>
+			$(function() {
+				$("#datepicker,#datepicker1").datepicker();
+			});
+		</script>
+		<!--/End-date-piker-->
+		<script src="/static/js/responsiveslides.min.js"></script>
+		<!--animate-->
+		<link href="/static/css/animate.css" rel="stylesheet" type="text/css" media="all">
+		<script src="/static/js/wow.min.js"></script>
 
-
-<!-- content -->
-<div class="content" style="background: #f2f2f2;height: 600px;">
-	<div class="container">
-
-		<div class="col-md-4 content_left wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.2s">
-			<div class="welcome">
-				<h3>Company History List</h3>
-				<ul>
-					<li><a href="#">Accusantium Doloremque Accus</a></li>
-					<li><a href="#">Molestiae Consequatur Molestiae</a></li>
-					<li><a href="#">Nostrum Exercitationem Nostrum</a></li>
-					<li><a href="#">Consequuntur Magnidolor Nostrum</a></li>
-					<li><a href="#">Molestiae Consequatur Molestiae</a></li>
-					<li><a href="#">Nostrum Exercitationem Nostrum</a></li>
-					<li><a href="#">Nostrum Exercitationem Nostrum</a></li>
-					<li><a href="#">Consequuntur Magnidolor Nostrum</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="col-md-8 content_right wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s">
-			<img class="img-responsive" src="/static/images/pic1.png" alt=" "/>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div>
-<!-- //content -->
-
-
-<!-- services -->
-<div class="services">
-	<div class="container">
-		<div class="col-md-4 services_left wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="0s">
-			<h3>Product Advantage </h3>
-			<p class="ser-para" >Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-				sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p>
-			<a href="about.html" class="hvr-outline-out button2">See More Advantage </a>
-				<script>
-						// You can also use "$(window).load(function() {"
-						$(function () {
-						 // Slideshow 4
-						$("#slider4").responsiveSlides({
-							auto: true,
-							pager: true,
-							nav: false,
-							speed: 500,
-							namespace: "callbacks",
-							before: function () {
-						$('.events').append("<li>before event fired.</li>");
-						},
-						after: function () {
-							$('.events').append("<li>after event fired.</li>");
-							}
-							});
-						});
-				</script>
-			<div  class="callbacks_container">
-				<ul class="rslides" id="slider4">
-					<li>
-						<div class="ser-bottom">
-							<h5>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-							sed quia consequuntur magni dolores eos qui </h5>
-							<p>- Alia Smith</p>
-						</div>
-					</li>
-					<li>
-						<div class="ser-bottom">
-							<h5>Voluptas sit aspernatur aut odit aut fugit,sed quia consequuntur magni dolores
-							eos qui ratione voluptatem sequi nesciunt</h5>
-							<p>- Thompson</p>
-						</div>
-					</li>
-					<li>
-						<div class="ser-bottom">
-							<h5>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-							sed quia consequuntur magni dolores eos qui </h5>
-							<p>- Federic</p>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-		<div class="col-md-8 services_right ">
-			<div class="list-left text-center wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="0.1s">
-				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-				<h4>Voluptatem</h4>
-				<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-					sed quia consequuntur magni dolores eos qui</p>
-			</div>
-			<div class="list-left text-center wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="0.2s">
-				<span class="glyphicon glyphicon-scissors" aria-hidden="true"></span>
-				<h4>Voluptatem</h4>
-				<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-					sed quia consequuntur magni dolores eos qui</p>
-			</div>
-			<div class="list-left text-center no_marg wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="0.3s">
-				<span class="glyphicon glyphicon-apple" aria-hidden="true"></span>
-				<h4>Voluptatem</h4>
-				<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-					sed quia consequuntur magni dolores eos qui</p>
-			</div>
-			<div class="list-left text-center no_marg wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="0.4s">
-				<span class="glyphicon glyphicon-education" aria-hidden="true"></span>
-				<h4>Voluptatem</h4>
-				<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-					sed quia consequuntur magni dolores eos qui</p>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div>
-<!-- //services -->
-
-
-<!-- Products -->
-<div class="ind-team">
-	<div class="container">
-		<h3>Products</h3>
-		<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
-			<div class="team-img">
-				<img class="img-responsive" src="/static/images/pic4.jpg" alt=" " style="height: 243px;"/>
-				<a href="javascript:;" class="team-more">More</a>
-			</div>
-			<h4>Deep</h4>
-			<p>Dental Surgeon</p>
-		</div>
-		<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
-			<div class="team-img">
-				<img class="img-responsive" src="/static/images/pic5.jpg" alt=" "/>
-				<a href="javascript:;" class="team-more">More</a>
-			</div>
-			<h4>Fine</h4>
-			<p>Cardiology</p>
-
-		</div>
-		<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
-			<div class="team-img">
-				<img class="img-responsive" src="/static/images/pic6.jpg" alt=" "/>
-				<a href="javascript:;" class="team-more">More</a>
-			</div>
-			<h4>Subskin</h4>
-			<p>Neurology</p>
-		</div>
-		<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
-			<div class="team-img">
-				<img class="img-responsive" src="/static/images/pic7.jpg" alt=" " style="height: 243px;"/>
-				<a href="javascript:;" class="team-more">More</a>
-			</div>
-			<h4>Deep</h4>
-			<p>Dental Surgeon</p>
-		</div>
-		<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
-			<div class="team-img">
-				<img class="img-responsive" src="/static/images/pic8.jpg" alt=" "/>
-				<a href="javascript:;" class="team-more">More</a>
-			</div>
-			<h4>Fine</h4>
-			<p>Cardiology</p>
-
-		</div>
-		<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
-			<div class="team-img">
-				<img class="img-responsive" src="/static/images/pic9.jpg" alt=" "/>
-				<a href="javascript:;" class="team-more">More</a>
-			</div>
-			<h4>Subskin</h4>
-			<p>Neurology</p>
-		</div>
-
-		<div class="clearfix"></div>
-	</div>
-</div>
-<!-- Products -->
-<!-- capabilities -->
-<div class="capacity">
-	<div class="container">
-		<h3>Capabilities</h3>
-		<div class="col-md-3 capabil_grid1 wow fadeInDownBig animated animated text-center" data-wow-delay="0.4s">
-			<div class="capil_text">
-				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='6000' data-delay='.5' data-increment="5">6000</div>
-				<p>Happy Patients</p>
-			</div>
-		</div>
-		<div class="col-md-3 capabil_grid2 wow fadeInUpBig animated animated text-center" data-wow-delay="0.4s">
-			<div class="capil_text">
-				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='1700' data-delay='.5' data-increment="2">1700</div>
-				<p>Our Staff</p>
-			</div>
-		</div>
-		<div class="col-md-3 capabil_grid3 wow fadeInDownBig animated animated text-center" data-wow-delay="0.4s">
-			<div class="capil_text">
-				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='21' data-delay='.5' data-increment="1">21</div>
-				<p>Foundation</p>
-			</div>
-		</div>
-		<div class="col-md-3 capabil_grid4 wow fadeInUpBig animated animated text-center" data-wow-delay="0.4s">
-			<div class="capil_text">
-				<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='2500' data-delay='.5' data-increment="3">2500</div>
-				<p>Clients</p>
-			</div>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div>
-<!-- //capabilities -->
-<!-- map -->
-<div class="container">
-	<h3 style="font-size: 35px;color: #00A4E4;text-align: center;margin: 60px 0;">Our map</h3>
-<div class="distribution-map">
-    <img src="/static/images/map.png">
-    <button class="map-point" style="top:15%;left:35%">
-        <div class="content" style="position: relative;">
-            <div class="centered-y">
-                <h2>A Place</h2>
-                <p>You can put plenty of details in here. In the original, I listed contact information and linked phone numbers and email addresses.</p>
-            </div>
-        </div>
-    </button>
-    <button class="map-point" style="top:35%;left:50%">
-        <div class="content" style="position: relative;">
-            <div class="centered-y">
-                <h2>France </h2>
-                <p>Lorem ipsum something something</p>
-            </div>
-        </div>
-    </button>
-    <button class="map-point" style="top:76%;left:82.5%">
-        <div class="content" style="position: relative;">
-            <div class="centered-y">
-                <h2>Australia</h2>
-                <p>I solemnly swear that I am up to no good</p>
-            </div>
-        </div>
-    </button>
-    <button class="map-point" style="top:45%;left:16%">
-        <div class="content" style="position: relative;">
-            <div class="centered-y">
-                <h2>U.S.A</h2>
-                <p>I&rsquo;m a marshmallow</p>
-            </div>
-        </div>
-    </button>
-    <button class="map-point" style="top:60%;left:53%">
-        <div class="content" style="position: relative;">
-            <div class="centered-y">
-                <h2>Sultan</h2>
-                <p>I bless the rains</p>
-            </div>
-        </div>
-    </button>
-    <button class="map-point" style="top:46%;left:78%">
-        <div class="content" style="position: relative;">
-            <div class="centered-y">
-                <h2>China</h2>
-                <p>m a marshmallow</p>
-            </div>
-        </div>
-    </button>
-</div>
-</div>
-<script src='/static/js/angular.js'></script>
-<!-- //map -->
-
+		<script>
+			new WOW().init();
+		</script>
+		<!--//end-animate-->
+	</head>
 {% endblock %}
+	<body>
+		<!-- header -->
+		{%block content %}
+		<div class="nav-menu dn1" id="nav-menu">
+			<div class="header-bottom" style="padding: 20px 0px 0px 0px;">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+							<div class="logo grid">
+								<div class="grid__item color-3">
+									<h1><a class="link link--nukun" href="/"><img src="/static/images/logo.png" alt="logo" style="width: 126px;height: 43px;margin-top: -22px;"></a></h1>
+								</div>
+							</div>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+							<nav class="menu menu--horatio">
+								<ul class="nav navbar-nav menu__list">
+									<li class="menu__item menu__item--current">
+										<a href="/" class="menu__link">Home</a>
+									</li>
+									<li class="menu__item">
+										<a  class="menu__link">Products</a>
+										<ul>
+											{% for product in products_list %}
+											<li>
+												<a href="{% url 'show_pro' product.name %}">{{ product.name }}</a>
+											</li>
+											{% endfor %}
+										</ul>
+									</li>
+									<li class="menu__item">
+										<a href="/about_us" class="menu__link">About Us</a>
+									</li>
+									<li class="menu__item">
+										<a href="/information" class="menu__link">Information</a>
+									</li>
+									<li class="menu__item">
+										<a href="/contact_us" class="menu__link">Contact Us</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<!-- /.navbar-collapse -->
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<div class="nav-menu dn2" id="nav-menu">
+			<div class="header-top">
+				<div class="logo grid">
+					<div class="grid__item color-3">
+						<h1><a class="link link--nukun" href="/"><img src="/static/images/logo.png" alt="logo" style="width: 126px;height: 43px;"></a></h1>
+					</div>
+				</div>
+			</div>
+			<div class="header-bottom">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+						</div>
+						<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+							<nav class="menu menu--horatio">
+								<ul class="nav navbar-nav menu__list">
+									<li class="menu__item menu__item--current">
+										<a href="/" class="menu__link">Home</a>
+									</li>
+									<li class="menu__item">
+										<a  class="menu__link">Products</a>
+										<ul>
+											{% for product in products_list %}
+											<li>
+												<a href="{% url 'show_pro' product.name %}">{{ product.name }}</a>
+											</li>
+											{% endfor %}
+										</ul>
+									</li>
+									<li class="menu__item">
+										<a href="/about_us" class="menu__link">About Us</a>
+									</li>
+									<li class="menu__item">
+										<a href="/information" class="menu__link">Information</a>
+									</li>
+									<li class="menu__item">
+										<a href="/contact_us" class="menu__link">Contact Us</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<!-- banner -->
+		<div class="banner">
+
+			<script>
+				// You can also use "$(window).load(function() {"
+				$(function() {
+					// Slideshow 4
+					$("#slider3").responsiveSlides({
+						auto: true,
+						pager: true,
+						nav: false,
+						speed: 500,
+						namespace: "callbacks",
+						before: function() {
+							$('.events').append("<li>before event fired.</li>");
+						},
+						after: function() {
+							$('.events').append("<li>after event fired.</li>");
+						}
+					});
+				});
+			</script>
+			<div id="top" class="callbacks_container">
+				<ul class="rslides" id="slider3">
+					{% for banner in banner_images %}
+					<li>
+						<img src="/upload/{{ banner.images }}" style="position: relative;width: 100%;height: 100%;" />
+						<div class="banner1">
+						</div>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<!-- //banner -->
+
+		<!-- Products -->
+		<div class="ind-team">
+			<div class="container">
+				<!--<h3>Products</h3>-->
+				{% for product in products_list %}
+				<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
+					<div class="team-img">
+						<a href="{% url 'show_pro' product.name %}">
+							<img class="img-responsive" src="/upload/{{ product.image }}" alt=" " />
+							<p class="team-more">{{ product.name }}</p>
+						</a>
+					</div>
+				</div>
+				{% endfor %}
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<!-- Products -->
+
+		<!-- works -->
+		<div class="works" style="background: #F2F2F2;padding: 50px 0;">
+			<div class="container">
+				<div class="col-md-4 about_img wow fadeInRight animated" data-wow-delay=".5s" style="position: relative;">
+					<img src="/static/images/works.png" alt="" style="width: 100%;">
+					<button type="button" class="works_circle" style="position: absolute;left: 200px;top: 100px;"><p class="works_des">Forehead furrows</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 220px;top: 130px;"><p class="works_des">Crow's feet</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 180px;top: 150px;"><p class="works_des">Nose bridge</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 210px;top: 170px;"><p class="works_des">Fill in apple muscle</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 120px;top: 180px;"><p class="works_des1">Fill in apple muscle</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 130px;top: 205px;"><p class="works_des1">Fill in apple muscle</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 160px;top: 230px;"><p class="works_des1">Fill in apple muscle</p></button>
+				</div>
+				<div class="col-md-8 about_img about_img_left">
+					<div class="choose-grid wow fadeInRight animated" data-wow-delay=".5s">
+						<h4>How does HAderm work?</h4>
+						<p>During the aging process, the human face loses fat and volume while the skin loses collagen and elasticity. Through nonsurgical injections, HAderm is specifically designed to add fullness to the cheeks and midface area, which can result in a more natural-looking, youthful appearance.</p>
+						<p>HAderm’s products are formulated to act like your body's own naturally occurring hyaluronic acid, restoring volume to your skin.</p>
+						<div class="col-md-6 about_img about_img_left" style="text-align: center;">
+							<img src="/static/images/skin_01.png" alt="">
+							<p>HA decreased, leading to collagen reduction.</p>
+						</div>
+						<div class="col-md-6 about_img about_img_left" style="text-align: center;">
+							<img src="/static/images/skin_02.png" alt="">
+							<p>Injection of HAderm to restore the skin young.</p>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+				<div>
+				</div>
+			</div>
+		</div>
+		<!-- //works -->
+		<!-- services -->
+		<div class="services">
+			<div class="container">
+				{% for adv in adv%}
+				<div class="col-md-4 services_left wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="0s">
+					<h3>{{ adv.title }}</h3>
+					<p class="ser-para">{{ adv.adv }}</p>
+					<div class="clearfix"></div>
+				</div>
+				{% endfor %}
+				<div class="col-md-8 services_right ">
+					{% for adv in advantage_list %}
+					<div class="list-left text-center no_marg wow bounceInDown product-adv" data-wow-duration="1.5s" data-wow-delay="0.1s">
+						<span class="glyphicon glyphicon-a product-adv-list-icon" aria-hidden="true"><img src="/upload/{{ adv.image }}" style="width: 25px;height: 25px;"></span>
+						<div class="product-adv-list">
+							<h4>{{ adv.name }}</h4>
+							<p>{{ adv.context }}</p>
+						</div>
+
+					</div>
+					{% endfor %}
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<!-- //services -->
+
+		<!-- case -->
+		<div class="case">
+			<div class="container">
+				<div class="film_focus" style="background: #90005e;">
+					<div class="film_focus_desc">
+						<ul class="film_focus_nav">
+							{% for case in be_af_images %}
+							{% if forloop.first %}
+							<li class="{{ class1 }}"> <b>{{ case.name }}</b><span>{{ case.name }}</span> </li>
+							{% else %}
+							<li class="{{ class2 }}"> <b>{{ case.name }}</b><span>{{ case.name }}</span> </li>
+							{% endif %}
+							{% endfor %}
+						</ul>
+					</div>
+					<div class="film_focus_imgs_wrap">
+						<ul class="film_focus_imgs">
+							{% for image in be_af_images %}
+							<li>
+								<a target="_blank" ><img src="/upload/{{ image.image }}" /></a>
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //case -->
+
+		<!-- capabilities -->
+		<div class="capacity">
+			<div class="container">
+				<!--<h3>Capabilities</h3>-->
+				<div class="col-md-3 capabil_grid1 wow fadeInDownBig animated animated text-center" data-wow-delay="0.4s">
+					<div class="capil_text">
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='5700' data-delay='.5' data-increment="3">5700</div>
+						<p>Happy Patients</p>
+					</div>
+				</div>
+				<div class="col-md-3 capabil_grid2 wow fadeInUpBig animated animated text-center" data-wow-delay="0.4s">
+					<div class="capil_text">
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='1700' data-delay='.5' data-increment="2">1700</div>
+						<p>Our Staff</p>
+					</div>
+				</div>
+				<div class="col-md-3 capabil_grid3 wow fadeInDownBig animated animated text-center" data-wow-delay="0.4s">
+					<div class="capil_text">
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='21' data-delay='.5' data-increment="1">21</div>
+						<p>Foundation</p>
+					</div>
+				</div>
+				<div class="col-md-3 capabil_grid4 wow fadeInUpBig animated animated text-center" data-wow-delay="0.4s">
+					<div class="capil_text">
+						<div class='numscroller numscroller-big-bottom' data-slno='1' data-min='0' data-max='2500' data-delay='.5' data-increment="1">2500</div>
+						<p>Clients</p>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<!-- //capabilities -->
+		{% endblock %}
+
+
+        {% block footer %}
+		<!-- contact -->
+		<div class="contact">
+			<div class="container">
+				{% for com_info in com_info  %}
+				<div class="col-md-6 contact-right wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s" style="padding-top: 20px;">
+					<h3>Contact Us</h3>
+					<div class="strip" style="margin-top: 5px;"></div>
+					<ul class="con-icons">
+						<li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>{{ com_info.number}}</li>
+						<li>
+							<a href="mailto:{{ com_info.email }}"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>{{ com_info.email }}</a>
+						</li>
+					</ul>
+					<ul class="fb_icons">
+						<li class="hvr-rectangle-out">
+							<a class="fb" href="{{ com_info.fa }}"></a>
+						</li>
+						<li class="hvr-rectangle-out">
+							<a class="twit" href="{{ com_info.tw }}"></a>
+						</li>
+						<li class="hvr-rectangle-out">
+							<a class="goog" href="{{ com_info.go }}"></a>
+						</li>
+						<li class="hvr-rectangle-out">
+							<a class="pin" href="#"></a>
+						</li>
+						<li class="hvr-rectangle-out">
+							<a class="drib" href="#"></a>
+						</li>
+					</ul>
+					<p class="copy-right" style="margin-top: -30px;">{{ com_info.trademark  }}</p>
+				</div>
+                {% endfor %}
+				<div class="col-md-6 contact-left wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s" style="padding-top: 60px;">
+					<h2>Find a Doctor</h2>
+					<form action="/email" method="post" style="margin-top: 10px;">
+						<input type="email" name="Email" placeholder="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+						<input type="submit" value="submit" onclick="return validate()" style="margin-left: -6px; />
+						</form>
+				</div>
+				<div class=" clearfix "></div>
+			</div>
+		</div>
+		<!-- // contact -->
+        {% endblock %}
+		<script type="text/javascript " src="/static/js/bootstrap-3.1.1.min.js "></script>
+		<!-- head切换 -->
+		<script>
+			window.onscroll = function() {
+
+				var scrollTop = document.body.scrollTop;
+
+				if(scrollTop >= 500) {
+
+					$(".dn1 ").css("display ", "block ");
+					$(".dn2 ").css("display ", "none ");
+				} else {
+					$(".dn2 ").css("display ", "block ");
+					$(".dn1 ").css("display ", "none ");
+				}
+			}
+		</script>
+	<script>
+		function validate() {
+		alart('提交成功')
+		}
+
+	</script>
+
+
+	</body>
+
+</html>

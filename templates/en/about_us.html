@@ -1,0 +1,486 @@
+{% extends 'en/index.html' %}
+{% block head %}
+<head>
+		<title>About us</title>
+		<!-- for-mobile-apps -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<link href="/static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+		<link rel="stylesheet" href="/static/css/jquery-ui.css" />
+		<link href="/static/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+		<link href="/static/css/lightbox.css" rel="stylesheet" />
+		<!-- js -->
+		<script type="text/javascript" src="/static/js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="/static/js/numscroller-1.0.js"></script>
+		<!-- start-smoth-scrolling -->
+		<script type="text/javascript" src="/static/js/move-top.js"></script>
+		<script type="text/javascript" src="/static/js/easing.js"></script>
+		<script type="text/javascript" src="/static/js/lightbox-2.6.min.js"></script>
+
+		<script src="/static/js/jquery-ui.js"></script>
+		<script type="text/javascript" src="j/static/s/jquery.carouFredSel-6.2.0-packed.js"></script>
+
+		<!--/End-date-piker-->
+		<script src="/static/js/responsiveslides.min.js"></script>
+		<!--animate-->
+		<link href="/static/css/animate.css" rel="stylesheet" type="text/css" media="all">
+
+		<!--//end-animate-->
+	</head>
+{% endblock %}
+
+{% block content %}
+  		<div class="nav-menu dn1" id="nav-menu">
+			<div class="header-bottom" style="padding: 20px 0px 0px 0px;">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+							<div class="logo grid">
+								<div class="grid__item color-3">
+									<h1><a class="link link--nukun" href="/"><img src="/static/images/logo.png" alt="logo" style="width: 126px;height: 43px;margin-top: -22px;"></a></h1>
+								</div>
+							</div>
+						</div>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+							<nav class="menu menu--horatio">
+								<ul class="nav navbar-nav menu__list">
+									<li class="menu__item ">
+										<a href="/" class="menu__link">Home</a>
+									</li>
+									<li class="menu__item">
+										<a  class="menu__link">Products</a>
+										<ul>
+											{% for product in products_list %}
+											<li>
+												<a href="{% url 'show_pro' product.name %}">{{ product.name }}</a>
+											</li>
+											{% endfor %}
+										</ul>
+									</li>
+									<li class="menu__item menu__item--current">
+										<a href="/about_us" class="menu__link">About Us</a>
+									</li>
+									<li class="menu__item">
+										<a href="/information" class="menu__link">Information</a>
+									</li>
+									<li class="menu__item ">
+										<a href="/contact_us" class="menu__link ">Contact Us</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<!-- /.navbar-collapse -->
+					</nav>
+				</div>
+			</div>
+		</div>
+
+		<div class="nav-menu dn2" id="nav-menu">
+			<div class="header-top">
+				<div class="logo grid">
+					<div class="grid__item color-3">
+						<h1><a class="link link--nukun" href="/"><img src="/static/images/logo.png" alt="logo" style="width: 126px;height: 43px;"></a></h1>
+					</div>
+				</div>
+			</div>
+			<div class="header-bottom">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+						</div>
+						<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+							<nav class="menu menu--horatio">
+								<ul class="nav navbar-nav menu__list">
+									<li class="menu__item ">
+										<a href="/" class="menu__link">Home</a>
+									</li>
+									<li class="menu__item">
+										<a  class="menu__link">Products</a>
+										<ul>
+											{% for product in products_list %}
+											<li>
+												<a href="{% url 'show_pro' product.name %}">{{ product.name }}</a>
+											</li>
+											{% endfor %}
+										</ul>
+									</li>
+									<li class="menu__item menu__item--current">
+										<a href="/about_us" class="menu__link">About Us</a>
+									</li>
+									<li class="menu__item">
+										<a href="/information" class="menu__link">Information</a>
+									</li>
+									<li class="menu__item ">
+										<a href="/contact_us" class="menu__link ">Contact Us</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+
+         <!-- exhibition -->
+
+		<section id="exhibition" class="page-section page" style="margin-top: 140px;padding-bottom: 40px;
+background: #f2f2f2;">
+			<div class="container text-center">
+				<div class="heading">
+					<h2 style="padding: 40px 0;color: #90005E;">Exhibition</h2>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div id="portfolio">
+							<ul class="items list-unstyled clearfix animated fadeInRight showing" data-animation="fadeInRight" style="margin-top: -40px;">
+                               {% for id,num,title,image in exhi_num%}
+								<li class="item branding">
+									<a href="{% url 'exhi_detail' id%}" class="fancybox">
+										<span class="num_total">{{ num }}</span>
+										<img src="/upload/{{ image }}" alt="">
+										<div class="overlay"> <span>{{ title }}</span> </div>
+									</a>
+								</li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- //exhibition -->
+
+        <!-- news -->
+		<div class="content">
+			<div class="container">
+
+				<div class="col-md-6 content_left wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.2s">
+					<div class="welcome">
+						<h3>News</h3>
+						<ul>
+							{% for news in news %}
+							<li>
+								<a href="{% url 'news_detail' news.id %}">{{ news.title }}</a><span class="news-date"> {{ news.datetime }}</span></li>
+						    {% endfor %}
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-6 content_right wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s" style="margin-top: -128px;">
+					<img class="img-responsive" src="/static/images/news_date01.jpg" alt=" " />
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<!-- //news -->
+
+<!-- Certificate -->
+		<div class="container" style="width: 100%;background: #F7F7F7;">
+			<h3 class="tittle" style="margin: 40px;">Certificate</h3>
+			<div class="bodyCon08">
+				<div class="students">
+					<div id="four_flash">
+						<div class="flashBg">
+							<ul class="mobile">
+								{% for cer in cers %}
+								<li>
+									<a href="/upload/{{ cer.images }}" data-lightbox="roadtrip"><img src="/upload/{{ cer.images }}"></a>
+								</li>
+								{% endfor %}
+							</ul>
+						</div>
+						<div class="but_left"><img src="/static/images/qianxleft.png" /></div>
+						<div class="but_right"><img src="/static/images/qianxr.png" /></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Certificate -->
+		<!-- Company history  -->
+		<div class="company-history">
+			<div class="container">
+				<div style="position: relative;">
+				</div>
+				<div class="row">
+					<div class="col-md-12 about">
+						<div class="about-body" style="position: relative;">
+							<div class="about-title text-center">
+								<h1 style="margin: 50px 0 10px 0;color: #90005e;">History</h1>
+							</div>
+							<div class="about-content process-content">
+								<div class="process-timeline draggable ui-widget-content">
+									<div id="draggable">
+										<div class="process-body">
+											<div class="process-row">
+												<div class="process-time">
+													<div class="time-con">
+														<span class="bgcolor red"></span>
+														<span class="year">2012</span>
+														<span class="pic red"><i class="fa fa-map-marker"></i></span>
+													</div>
+												</div>
+												<div class="process-noyear">
+													First year
+												</div>
+												<div class="process-content" style="margin-top: 50px;">
+													<h2>Preparatory</h2>
+													<p>
+														Interest preparatory group set up relevant information
+													</p>
+												</div>
+											</div>
+											<div class="process-row ">
+												<div class="process-time">
+													<div class="time-con">
+														<span class="bgcolor blue"></span>
+														<span class="year">2013</span>
+														<span class="pic blue"><i class="fa fa-map-marker"></i></span>
+													</div>
+												</div>
+												<div class="process-noyear">
+													Second years
+												</div>
+												<div class="process-content">
+													<h2>Preparatory</h2>
+													<p>
+														Interest preparatory group set up relevant information
+													</p>
+												</div>
+											</div>
+											<div class="process-row ">
+												<div class="process-time">
+													<div class="time-con">
+														<span class="bgcolor red"></span>
+														<span class="year">2014</span>
+														<span class="pic red"><i class="fa fa-map-marker"></i></span>
+													</div>
+												</div>
+												<div class="process-noyear">
+													Third years
+												</div>
+												<div class="process-content" style="margin-top: 50px;">
+													<h2>Preparatory</h2>
+													<p>
+														Interest preparatory group set up relevant information
+													</p>
+												</div>
+											</div>
+											<div class="process-row ">
+												<div class="process-time">
+													<div class="time-con">
+														<span class="bgcolor orange"></span>
+														<span class="year">2015</span>
+														<span class="pic orange"><i class="fa fa-map-marker"></i></span>
+													</div>
+												</div>
+												<div class="process-noyear">
+													Fourth years
+												</div>
+												<div class="process-content">
+													<h2>Preparatory</h2>
+													<p>
+														Interest preparatory group set up relevant information
+													</p>
+												</div>
+											</div>
+											<div class="process-row ">
+												<div class="process-time">
+													<div class="time-con">
+														<span class="bgcolor orange"></span>
+														<span class="year">2016</span>
+														<span class="pic orange"><i class="fa fa-map-marker"></i></span>
+													</div>
+												</div>
+												<div class="process-noyear">
+													Fifth years
+												</div>
+												<div class="process-content" style="margin-top: 50px;">
+													<h2>Preparatory</h2>
+													<p>
+														Interest preparatory group set up relevant information
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //Company history  -->
+
+{% endblock %}
+
+{% block footer %}
+
+<div class="contact">
+			<div class="container">
+				<div class="col-md-6 contact-right wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s" style="padding-top: 20px;">
+					<h3 style="color: #fff;">Contact Us</h3>
+					<div class="strip" style="margin-top: 5px;"></div>
+					<ul class="con-icons">
+						{% for com_info in com_info %}
+						<li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>{{ com_info.number}}</li>
+						<li>
+							<a href="mailto:{{ com_info.email }}"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>{{ com_info.email }}</a>
+						</li>
+						{% endfor %}
+					</ul>
+					<ul class="fb_icons">
+						<li class="hvr-rectangle-out">
+							<a class="fb" href="#"></a>
+						</li>
+						<li class="hvr-rectangle-out">
+							<a class="twit" href="#"></a>
+						</li>
+						<li class="hvr-rectangle-out">
+							<a class="goog" href="#"></a>
+						</li>
+						<li class="hvr-rectangle-out">
+							<a class="pin" href="#"></a>
+						</li>
+						<li class="hvr-rectangle-out">
+							<a class="drib" href="#"></a>
+						</li>
+					</ul>
+					<p class="copy-right" style="margin-top: -30px;">{{ com_info.trademark  }}</p>
+				</div>
+
+				<div class="col-md-6 contact-left wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s" style="padding-top: 60px;">
+					<h2 style="color: #fff;">Find a Doctor</h2>
+					{% if email_tijiao %}
+					   <p style="color:#fff;font-size:30px">{{ success }}</p>
+					{% endif %}
+
+					<form id="email_put" action="/email/contact" method="post" style="margin-top: 10px;" >
+						<input style="color: #fff;border: 1px solid #fff;" type="email" name="Email" placeholder="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+						<input type="submit" value="submit"  style="margin-left: -6px; />
+						</form>
+				</div>
+				<div class=" clearfix "></div>
+			</div>
+		</div>
+
+	<script type="text/javascript " src="/static/js/bootstrap-3.1.1.min.js "></script>
+		<script>
+			window.onscroll = function() {
+
+				var scrollTop = document.body.scrollTop;
+
+				if(scrollTop >= 500) {
+
+					$(".dn1 ").css("display ", "block ");
+					$(".dn2 ").css("display ", "none ");
+				} else {
+					$(".dn2 ").css("display ", "block ");
+					$(".dn1 ").css("display ", "none ");
+				}
+			}
+		</script>
+		<script type="text/javascript ">
+//学员
+var _index5=0;
+$("#four_flash .but_right img ").click(function(){
+	_index5++;
+	var len=$(".flashBg ul.mobile li ").length;
+	if(_index5+5>len){
+		$("#four_flash .flashBg ul.mobile ").stop().append($("ul.mobile ").html());
+	}
+	$("#four_flash .flashBg ul.mobile ").stop().animate({left:-_index5*326},1000);
+	});
+
+
+$("#four_flash .but_left img ").click(function(){
+	if(_index5==0){
+		$("ul.mobile ").prepend($("ul.mobile ").html());
+		$("ul.mobile ").css("left ","-1380px ");
+		_index5=6
+	}
+	_index5--;
+	$("#four_flash .flashBg ul.mobile ").stop().animate({left:-_index5*326},1000);
+	});
+</script>
+
+<!-- 公司历程 -->
+		<script>
+	$(function(){
+		var aboutWidth = $(".about ").width();
+		$(".process-timeline ").width(aboutWidth);
+		var lastRightSpeed = 40; //控制拖动到最右边点是否对准时间刻度线上
+		var processtimelineW = $(".process-timeline ").width();
+		var processrowLength = $(".process-body ").find('.process-row').length;
+		var processbodyNumber = processrowLength*200;
+		$(".process-body ").css({"width ":processbodyNumber});
+
+		if(processrowLength < 5)
+		{
+			$("#draggable ").draggable('disable');
+			return;
+		}
+		$("#processLeft ").click(function(){
+			var processContentW = $(".process-content ").width();
+			var processBodyW = $(".process-body ").width();
+			var processBodyML = parseInt($(".ui-draggable ").css("left "));
+			if ( (Math.abs(processBodyML)+processtimelineW) >= processBodyW ) {
+				return;
+			}
+			$(".ui-draggable ").css({"left ":processBodyML-50});
+		});
+		$("#processRight ").click(function(){
+			var processBodyML = parseInt($(".ui-draggable ").css("left "));
+			if (processBodyML == 0) {
+				return;
+			}
+			$(".ui-draggable ").css({"left ":processBodyML+50});
+		});
+
+		$(document).keydown(function(event){
+			if (event.keyCode == 39) {
+			   $("#processLeft ").click();
+			}
+			if (event.keyCode == 37) {
+			   $("#processRight ").click();
+			}
+		});
+
+		$("#draggable ").draggable({
+			cursor: "move ",
+			axis: 'x',
+			grid: [50, 20],
+			stop: function(event, ui){
+				var FleftNumber = parseInt($("#draggable ").css("left "));
+				if (FleftNumber > 0) {
+					$("#draggable ").animate({"left ": 0}, 500);
+					return;
+				};
+				var leftNumber = Math.abs(FleftNumber);
+				leftNumber = leftNumber + processtimelineW;
+				if (leftNumber > processbodyNumber)
+				{
+					leftNumber = processbodyNumber;
+					$("#draggable ").animate({"left ": -(leftNumber-processtimelineW + lastRightSpeed)}, 500);
+				}
+			}
+		});
+	})
+</script>
+
+{% endblock %}
