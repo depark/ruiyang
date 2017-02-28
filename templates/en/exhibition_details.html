@@ -248,24 +248,25 @@
 		<!-- contact -->
 		<div class="contact">
 			<div class="container">
+				{% for com_info in com_info  %}
 				<div class="col-md-6 contact-right wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s" style="padding-top: 20px;">
 					<h3>Contact Us</h3>
 					<div class="strip" style="margin-top: 5px;"></div>
 					<ul class="con-icons">
-						<li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>0086-21-51698555</li>
+						<li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>{{ com_info.number}}</li>
 						<li>
-							<a href="mailto:info@reyoungel.com"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>info@reyoungel.com</a>
+							<a href="mailto:{{ com_info.email }}"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>{{ com_info.email }}</a>
 						</li>
 					</ul>
 					<ul class="fb_icons">
 						<li class="hvr-rectangle-out">
-							<a class="fb" href="#"></a>
+							<a class="fb" href="{{ com_info.fa }}"></a>
 						</li>
 						<li class="hvr-rectangle-out">
-							<a class="twit" href="#"></a>
+							<a class="twit" href="{{ com_info.tw }}"></a>
 						</li>
 						<li class="hvr-rectangle-out">
-							<a class="goog" href="#"></a>
+							<a class="goog" href="{{ com_info.go }}"></a>
 						</li>
 						<li class="hvr-rectangle-out">
 							<a class="pin" href="#"></a>
@@ -274,18 +275,20 @@
 							<a class="drib" href="#"></a>
 						</li>
 					</ul>
-					<p class="copy-right" style="margin-top: -30px;">Copyright © Bioha Laboratories Technical. </p>
+					<p class="copy-right" style="margin-top: -30px;">{{ com_info.trademark  }}</p>
 				</div>
+                {% endfor %}
 
 				<div class="col-md-6 contact-left wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s" style="padding-top: 60px;">
 					<h2>Find a Doctor</h2>
-					<form action="#" method="post" style="margin-top: 10px;">
+					<form action="/email/" method="post" style="margin-top: 10px;" target="nm_iframe">
 						<input type="email" name="Email" placeholder="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
 						<input type="submit" value="submit" style="margin-left: -6px; />
 						</form>
 				</div>
 				<div class=" clearfix "></div>
 			</div>
+			<iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
 		</div>
 		<!--  //   contact -->
 
@@ -310,5 +313,5 @@
 			}
 		</script>
 
-{% endblock %}
+{% endblock %}-->
 

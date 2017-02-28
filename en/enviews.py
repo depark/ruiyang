@@ -5,8 +5,8 @@ from en.models import *
 
 from django.contrib import staticfiles
 
-
-
+#全局变量
+com_info = Com_info.objects.order_by('id')[0:1]
 
 def index(request):
     banner_images = Banner.objects.all().order_by('id')
@@ -32,7 +32,6 @@ def about(request):
     exhi_num = []
     com_info = Com_info.objects.order_by('id')[0:1]
     exhis = Exhi.objects.all().order_by('id')
-    print 'exhi is %s' % exhis
     for i in exhis:
         exhi = []
         image_num = Exhi_Image.objects.filter(name_id=i.id).count()
@@ -41,7 +40,6 @@ def about(request):
         exhi.append(i.title)
         exhi.append(i.image)
         exhi_num.append(exhi)
-    print 'exhi is %s' % exhi_num
     #新闻列表
     news = News.objects.all()
     #证书列表
@@ -70,7 +68,6 @@ def infor(request):
 
     return render_to_response('en/information-FAQ.html',locals())
 
-
 def contact_us(request):
     if request.method == 'POST':
         TIJIAO = True
@@ -80,7 +77,7 @@ def contact_us(request):
         country = request.POST['Country']
         email = request.POST['Email']
         require = request.POST['Requir']
-        print name,company,tel,country,email,require
+       # print name,company,tel,country,email,require
         try:
             p = Contect(name=name,company=company,tel=tel,country=country,email=email,requ=require)
             p.save()
@@ -92,6 +89,12 @@ def contact_us(request):
     advantage_list = Advantage.objects.all()
     be_af_images = Case.objects.all().order_by('id')
     com_info = Com_info.objects.order_by('id')[0:1]
+    #print request.META
+    #print 'host is '+request.get_host()
+    #print 'path is '+request.path
+    url = request.META['HTTP_REFERER']
+    #print url.split(request.get_host())[1]
+
 
     return render_to_response('en/contact.html', locals())
 
@@ -111,11 +114,9 @@ def show_pro_detail(request,pname):
     com_info = Com_info.objects.order_by('id')[0:1]
     pro = Product.objects.get(name = pname)
     title = pro.name
-    print(pro.name,pro.image)
+    #print(pro.name,pro.image)
 
     return render_to_response('en/product-detial.html',locals())
-
-
 
 def news_detail(request,id):
     products_list = Product.objects.all()
@@ -145,19 +146,23 @@ def show_cers(request):
             print(k.image)
     return render_to_response('en/exhi.html',locals())
 
-def get_email(request,url):
+def get_email(request):
     if request.method == 'POST':
         email = request.POST['Email']
-        print email
+        em = Rece_Email.objects.filter(email=email)
+        if not em:
+            e = Rece_Email(email=email)
+            e.save()
+            print email+'  has written'
         email_tijiao = True
         success = 'Thanks for your find'
         com_info = Com_info.objects.order_by('id')[0:1]
-        print com_info
-        print request.path
-        print request.META['HTTP_REFERER']
-        if url == 'index':
-            return render_to_response('en/index.html', locals())
-        elif url == 'contact':
-            return render_to_response('en/contact.html',locals())
+        url = request.META['HTTP_REFERER']
+        host = request.get_host()
+        #print url,host
+        real_url = url.split(host)[1]
+        #print real_url
+        return HttpResponseRedirect(real_url)
+
     else:
         return HttpResponse(status=404)

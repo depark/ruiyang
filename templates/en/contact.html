@@ -236,13 +236,15 @@
 					   <p style="color:#fff;font-size:30px">{{ success }}</p>
 					{% endif %}
 
-					<form id="email_put" action="/email/contact" method="post" style="margin-top: 10px;" >
+					<form id="email_put" action="/email/" method="post" style="margin-top: 10px;" target="nm_iframe" >
 						<input style="color: #fff;border: 1px solid #fff;" type="email" name="Email" placeholder="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
 						<input type="submit" value="submit"  style="margin-left: -6px; />
 						</form>
 				</div>
 				<div class=" clearfix "></div>
 			</div>
+	   <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
 		</div>
+
  <script type="text/javascript " src="/static/js/bootstrap-3.1.1.min.js "></script>
 {% endblock %}

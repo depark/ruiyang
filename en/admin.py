@@ -81,6 +81,10 @@ class Com_info_admin(admin.ModelAdmin):
 class Index_adv_admin(admin.ModelAdmin):
     list_display = ('title','adv')
 
+
+class Recv_email(admin.ModelAdmin):
+    list_display = ('id','email')
+    readonly_fields = ('email',)
 #admin.site.register(Product,productuser)
 #admin.site.register(Exhi,exhiuse)
 #admin.site.register(Case,case)
@@ -105,5 +109,6 @@ admin_site.register(Faq,faq_admin)
 admin_site.register(Advantage,Advantage_admin)
 admin_site.register(Com_info,Com_info_admin)
 admin_site.register(Index_adv,Index_adv_admin)
+admin_site.register(Rece_Email,Recv_email)
 admin_site.register(User)
 admin_site.register(Group)

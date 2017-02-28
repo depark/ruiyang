@@ -21,7 +21,6 @@ class Banner(models.Model):
         verbose_name = 'banner图片'
         verbose_name_plural = 'banner图片'
 
-
 class Product(models.Model):
     '''
     产品
@@ -195,7 +194,6 @@ class Com_info(models.Model):
         verbose_name = '公司信息'
         verbose_name_plural = '公司信息'
 
-
 class Index_adv(models.Model):
     '''
     首页展示优势
@@ -211,8 +209,18 @@ class Index_adv(models.Model):
         verbose_name = '首页优势标题'
         verbose_name_plural = '首页优势内容'
 
+class Rece_Email(models.Model):
+    '''
+    用户提交email地址
+    '''
+    email = models.EmailField('用户提交的email地址')
 
+    def __str__(self):
+        return self.email
 
+    class Meta:
+        verbose_name = '用户提交的email地址'
+        verbose_name_plural = '用户提交的email地址'
 
 
 

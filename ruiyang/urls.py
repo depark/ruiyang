@@ -37,7 +37,7 @@ urlpatterns = [
     url(r'^about_us/$', enviews.about),
     url(r'^about_us/exhi/(?P<id>[0-9]+)', enviews.exhi_detail,name='exhi_detail'),
 url(r'^about_us/news/(?P<id>[0-9]+)', enviews.news_detail,name='news_detail'),
-    url(r'^email/(?P<url>[A-Za-z]+)', enviews.get_email),
+    url(r'^email/$', enviews.get_email),
     url(r'^information/', enviews.infor,name='information'),
     url(r'^contact_us/', enviews.contact_us,name='contact'),
     url(r'^ueditor/', include(DjangoUeditor_urls)),
