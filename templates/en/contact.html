@@ -176,19 +176,22 @@
 					<h2>INQUIRY</h2>
 					<div class="strip"></div>
 					{% if TIJIAO %}
-					 <P style="font-size:30px;color:#E61AE6"><strong>{{ success }}</strong></P>
+					 <P style="font-size:30px;color:#E61AE6"><strong>{{ success }}<br> {{ wrong_init }}</strong></P>
 					{% endif %}
+					 <P id = 'wron_num' style="font-size:30px;color:#E61AE6"><strong></strong></P>
 					<div style="border: 1px solid #000;padding: 0px 10px 0 20px;margin: 20px 20px 20px 0;">
-						<form action="" method="post">
+						<form id='form_put' action="/contact_us/" method="post"  target="form_iframe">
 							<input type="text" name="Name" placeholder="*Name"  required="required">
 							<input type="text" name="Company" placeholder="Company Name"  required="">
-							<input type="text" name="Tel" placeholder="Tel"  required="">
+							<input type="text" name="Tel"     id = 'tel' placeholder="Tel"  required="">
 							<input type="text" name="Country" placeholder="Country" required="">
 							<input type="email" name="Email" placeholder="*Email"  required="required">
 							<textarea class="text-box" name="Requir" placeholder="Requirements"  required="" style="width: 96%;border: 1px solid #000;background: none;outline: none;color: #000;height: 200px;"></textarea>
-							<input type="submit" value="submit" style="margin-bottom: 30px;margin-top: 20px;" />
+							<input id='form_submit' type="submit" value="submit" style="margin-bottom: 30px;margin-top: 20px;" />
+							<!--input type="reset" value="reset" style="margin-bottom: 30px;margin-top: 20px;"-->
 						</form>
 					</div>
+					<iframe id="id_iframe" name="form_iframe" style="display:none;"></iframe>
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -230,21 +233,29 @@
 					<p class="copy-right" style="margin-top: -30px;">{{ com_info.trademark  }}</p>
 				</div>
 
-				<div class="col-md-6 contact-left wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s" style="padding-top: 60px;">
+				<div  class="col-md-6 contact-left wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s" style="padding-top: 60px;">
 					<h2 style="color: #fff;">Find a Doctor</h2>
-					{% if email_tijiao %}
-					   <p style="color:#fff;font-size:30px">{{ success }}</p>
-					{% endif %}
-
-					<form id="email_put" action="/email/" method="post" style="margin-top: 10px;" target="nm_iframe" >
-						<input style="color: #fff;border: 1px solid #fff;" type="email" name="Email" placeholder="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-						<input type="submit" value="submit"  style="margin-left: -6px; />
-						</form>
+					   <p id='result' style="color:#fff;font-size:30px"></p>
+					<form  id='email_put' method="post" action="/email/" style="margin-top: 10px;"   target="nm_iframe">
+						<input style="color: #fff;border: 1px solid #fff;" id="email" type="email" name="email" placeholder="Email"  required=""/>
+						<input type="submit" id="sub"  value="submit"  style="margin-left: -6px;" />
+					</form>
 				</div>
 				<div class=" clearfix "></div>
 			</div>
 	   <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
-		</div>
+
+
+<script >
+     $('#sub').click(function(){
+     $('#result').html('提交成功');
+     $('#email_put').submit()
+     document.getElementById('email_put').reset();
+
+})
+</script>
+
+
 
  <script type="text/javascript " src="/static/js/bootstrap-3.1.1.min.js "></script>
 {% endblock %}

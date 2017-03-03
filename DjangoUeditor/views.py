@@ -12,7 +12,9 @@ from django.utils import six
 import urllib
 from django.utils.six.moves.urllib.request import urlopen
 from django.utils.six.moves.urllib.parse import urljoin
-
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 
 if six.PY3:

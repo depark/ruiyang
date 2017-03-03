@@ -131,11 +131,11 @@ class Contect(models.Model):
     客户意见
     '''
     name = models.CharField('客户名',max_length=20)
-    company = models.CharField('客户公司名',max_length=40)
-    tel = models.IntegerField('客户电话')
-    country = models.CharField('所在国家',max_length=20)
+    company = models.CharField('客户公司名',max_length=40,blank=True,null=True)
+    tel = models.IntegerField('客户电话',blank=True,null=True)
+    country = models.CharField('所在国家',max_length=20,blank=True,null=True)
     email = models.EmailField('客户邮件')
-    requ = models.TextField('客户意见')
+    requ = models.TextField('客户意见',blank=True,null=True)
 
     class Meta:
         default_permissions = ('change','delete')

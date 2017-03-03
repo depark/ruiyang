@@ -1,0 +1,26 @@
+
+ function checkform(obj){
+         if (!NaN(obj.Tel)){
+             alert('wrong tel')
+             return false;
+     }
+         else {
+          $('#form_put').submit();                 表单提交
+          $('#wron_num').html('提交成功');
+          document.getElementById('form_put').reset();
+     }
+  $('#email_put').submit();
+
+
+
+
+ $('#button').click(function(){
+       $('#result').html('提交成功');
+       alert('提交成功');
+       document.getElementById('email_put').reset();
+}
+
+
+ $.get('/email',data,function(datas){
+      alert(datas);
+      }) var data = {'email':email}

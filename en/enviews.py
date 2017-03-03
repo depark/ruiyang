@@ -2,11 +2,11 @@
 from django.contrib import *
 from django.shortcuts import *
 from en.models import *
-
+from django.http import JsonResponse
 from django.contrib import staticfiles
-
+import json
 #全局变量
-com_info = Com_info.objects.order_by('id')[0:1]
+
 
 def index(request):
     banner_images = Banner.objects.all().order_by('id')
@@ -69,33 +69,36 @@ def infor(request):
     return render_to_response('en/information-FAQ.html',locals())
 
 def contact_us(request):
-    if request.method == 'POST':
-        TIJIAO = True
-        name = request.POST['Name']
-        company = request.POST['Company']
-        tel = request.POST['Tel']
-        country = request.POST['Country']
-        email = request.POST['Email']
-        require = request.POST['Requir']
-       # print name,company,tel,country,email,require
-        try:
-            p = Contect(name=name,company=company,tel=tel,country=country,email=email,requ=require)
-            p.save()
-            success = 'Thanks for your suggest'
-        except Exception as e:
-            success = 'wrong happend ,try later again'
     banner_images = Banner.objects.all().order_by('id')
     products_list = Product.objects.all()
     advantage_list = Advantage.objects.all()
     be_af_images = Case.objects.all().order_by('id')
     com_info = Com_info.objects.order_by('id')[0:1]
+    if request.method == 'POST':
+        country = request.POST['Country']
+        email = request.POST['Email']
+        require = request.POST['Requir']
+        name = request.POST['Name']
+        company = request.POST['Company']
+        tel = request.POST['Tel']
+        TIJIAO = True
+        if not tel.isdigit():
+            wrong_init = 'wrong tel!!!'
+        print name,company,tel,country,email,require
+        try:
+            p = Contect(name=name,company=company,tel=tel,country=country,email=email,requ=require)
+            p.save()
+            print 'p have written!!'
+            success = 'Thanks for your suggest'
+        except Exception as e:
+            print 'error write'
+            success = 'wrong happend ,try later again'
+
     #print request.META
     #print 'host is '+request.get_host()
     #print 'path is '+request.path
-    url = request.META['HTTP_REFERER']
+    #url = request.META['HTTP_REFERER']
     #print url.split(request.get_host())[1]
-
-
     return render_to_response('en/contact.html', locals())
 
 def pro(request):
@@ -148,21 +151,27 @@ def show_cers(request):
 
 def get_email(request):
     if request.method == 'POST':
-        email = request.POST['Email']
+        email = request.POST['email']
         em = Rece_Email.objects.filter(email=email)
-        if not em:
+        if not em and  email:
             e = Rece_Email(email=email)
-            e.save()
+            #e.save()
             print email+'  has written'
-        email_tijiao = True
-        success = 'Thanks for your find'
-        com_info = Com_info.objects.order_by('id')[0:1]
-        url = request.META['HTTP_REFERER']
-        host = request.get_host()
+            result = 'Thanks for your find'
+        else:
+            result = 'failed'
+        result_json = {'result':result}
+        return JsonResponse(result_json)
+        #return None
+        #email_tijiao = True
+        #success = 'Thanks for your find'
+        #com_info = Com_info.objects.order_by('id')[0:1]
+        #url = request.META['HTTP_REFERER']
+        #host = request.get_host()
         #print url,host
-        real_url = url.split(host)[1]
+        #real_url = url.split(host)[1]
         #print real_url
-        return HttpResponseRedirect(real_url)
-
+        #return '提交成功'
+        #return HttpResponseRedirect(real_url)
     else:
         return HttpResponse(status=404)
