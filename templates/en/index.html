@@ -377,9 +377,10 @@
                 {% endfor %}
 				<div class="col-md-6 contact-left wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s" style="padding-top: 60px;">
 					<h2>Find a Doctor</h2>
-					<form action="/email/" method="post" style="margin-top: 10px;" target="nm_iframe">
-						<input type="email" name="Email" placeholder="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-						<input type="submit" value="submit"  style="margin-left: -6px; />
+					 <p id='result' style="color:#fff;font-size:30px"></p>
+					<form id = 'email_put' action="/email/" method="post" style="margin-top: 10px;" target="nm_iframe">
+						<input type="email" name="email" placeholder="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
+						<input type="submit" value="submit"  id = 'sub' style="margin-left: -6px; />
 						</form>
 				</div>
 				<div class=" clearfix "></div>
@@ -405,12 +406,17 @@
 				}
 			}
 		</script>
-	<script>
-		function validate() {
-		alart('提交成功')
-		}
+<script>
+	 $('#sub').click(function(){
+     $('#email_put').submit();
+     $('#result').html('提交成功');
+      document.getElementById('email_put').reset();
+      return false
 
-	</script>
+})
+
+</script>
+
 
 
 	</body>

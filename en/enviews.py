@@ -87,7 +87,7 @@ def contact_us(request):
         print name,company,tel,country,email,require
         try:
             p = Contect(name=name,company=company,tel=tel,country=country,email=email,requ=require)
-            p.save()
+            #p.save()
             print 'p have written!!'
             success = 'Thanks for your suggest'
         except Exception as e:
@@ -152,11 +152,12 @@ def show_cers(request):
 def get_email(request):
     if request.method == 'POST':
         email = request.POST['email']
+        print email
         em = Rece_Email.objects.filter(email=email)
         if not em and  email:
             e = Rece_Email(email=email)
-            #e.save()
-            print email+'  has written'
+            e.save()
+            #print email+'  has written'
             result = 'Thanks for your find'
         else:
             result = 'failed'

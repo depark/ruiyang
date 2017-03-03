@@ -182,11 +182,11 @@
 					<div style="border: 1px solid #000;padding: 0px 10px 0 20px;margin: 20px 20px 20px 0;">
 						<form id='form_put' action="/contact_us/" method="post"  target="form_iframe">
 							<input type="text" name="Name" placeholder="*Name"  required="required">
-							<input type="text" name="Company" placeholder="Company Name"  required="">
-							<input type="text" name="Tel"     id = 'tel' placeholder="Tel"  required="">
-							<input type="text" name="Country" placeholder="Country" required="">
+							<input type="text" name="Company" placeholder="Company Name" >
+							<input type="text" name="Tel"     id = 'tel' placeholder="Tel" >
+							<input type="text" name="Country" placeholder="Country" >
 							<input type="email" name="Email" placeholder="*Email"  required="required">
-							<textarea class="text-box" name="Requir" placeholder="Requirements"  required="" style="width: 96%;border: 1px solid #000;background: none;outline: none;color: #000;height: 200px;"></textarea>
+							<textarea class="text-box" name="Requir" placeholder="Requirements"   style="width: 96%;border: 1px solid #000;background: none;outline: none;color: #000;height: 200px;"></textarea>
 							<input id='form_submit' type="submit" value="submit" style="margin-bottom: 30px;margin-top: 20px;" />
 							<!--input type="reset" value="reset" style="margin-bottom: 30px;margin-top: 20px;"-->
 						</form>
@@ -241,21 +241,34 @@
 						<input type="submit" id="sub"  value="submit"  style="margin-left: -6px;" />
 					</form>
 				</div>
+				<iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
 				<div class=" clearfix "></div>
 			</div>
-	   <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
 
 
-<script >
-     $('#sub').click(function(){
+
+<script>
+	 $('#sub').click(function(){
+     $('#email_put').submit();
      $('#result').html('提交成功');
-     $('#email_put').submit()
-     document.getElementById('email_put').reset();
 
 })
+
 </script>
-
-
-
+<script>
+	$('#form_submit').click(function(){
+	var tel = $('#tel').val();
+	if (isNaN(tel)){
+	   alert('请输入正确数字')
+	   $('#wron_num').html('请输入数字')
+	   document.getElementById('tel').focus();
+	   return false;
+	}
+    else {
+    document.getElementById('form_put').submit();
+    $('#wron_num').html('提交成功')
+    }
+	})
+</script>
  <script type="text/javascript " src="/static/js/bootstrap-3.1.1.min.js "></script>
 {% endblock %}
