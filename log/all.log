@@ -1,2 +1,16 @@
 INFO 2017-03-06 17:35:14,351 "GET /product/Deep/ HTTP/1.1" 200 9472
 INFO 2017-03-06 17:35:23,852 "GET /product/Fine/ HTTP/1.1" 200 9394
+INFO 2017-03-06 17:38:12,555 "GET /information/ HTTP/1.1" 200 11623
+INFO 2017-03-06 17:38:12,596 "GET /information/css/jquery-ui.css HTTP/1.1" 200 11623
+INFO 2017-03-06 17:38:22,640 "POST /email/ HTTP/1.1" 200 34
+INFO 2017-03-06 17:39:42,062 eqwe@ewe have written in db
+INFO 2017-03-06 17:39:42,062 "POST /email/ HTTP/1.1" 200 34
+ERROR 2017-03-06 17:41:16,575 9222@qq.com have already exsit
+INFO 2017-03-06 17:41:16,576 "POST /email/ HTTP/1.1" 200 20
+INFO 2017-03-06 17:44:31,115 "GET /contact_us/ HTTP/1.1" 200 10478
+INFO 2017-03-06 17:44:40,306 Contect object suggest have written in db 
+INFO 2017-03-06 17:44:40,309 "POST /contact_us/ HTTP/1.1" 200 37
+INFO 2017-03-06 17:45:57,045 Contect object suggest have written in db 
+INFO 2017-03-06 17:45:57,046 "POST /contact_us/ HTTP/1.1" 200 37
+INFO 2017-03-06 17:46:33,726 dwqdqE suggest have written in db 
+INFO 2017-03-06 17:46:33,726 "POST /contact_us/ HTTP/1.1" 200 37

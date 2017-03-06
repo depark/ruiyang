@@ -72,6 +72,7 @@ def infor(request):
     return render_to_response('en/information-FAQ.html',locals())
 
 def contact_us(request):
+    logger = logging.getLogger('django')
     banner_images = Banner.objects.all().order_by('id')
     products_list = Product.objects.all()
     advantage_list = Advantage.objects.all()
@@ -94,13 +95,15 @@ def contact_us(request):
             p = Contect(name=name,company=company,tel=tel,country=country,email=email,requ=require)
             p.save()
             #print 'p have written!!'
+            logger.info('%s suggest have written in db ' % name)
             success = 'Thanks for your suggest'
+            print  '%s suggest have written in db ' % name
         except Exception as e:
             #print 'error write'
+            logger.error('%s suggest can not written in db ' % name)
             success = 'wrong happend ,try later again'
         result = {'result':success}
-        print result
-        return JsonResponse(result)
+        return HttpResponse(json.dumps(result))
 
     #print request.META
     #print 'host is '+request.get_host()
@@ -158,7 +161,7 @@ def show_cers(request):
     return render_to_response('en/exhi.html',locals())
 
 def get_email(request):
-    logger = logging.getLogger(__name__)
+    logger = logging.getLogger('django')
     if request.method == 'POST':
         e_list = []
         email = request.POST['email']
@@ -169,7 +172,7 @@ def get_email(request):
         if not e_list and  email  :
             e = Rece_Email(email=email)
             e.save()
-            logger.debug('%s have written in db' % email)
+            logger.info('%s have written in db' % email)
             result = 'Thanks for your find'
         else:
             logger.error('%s have already exsit' % email)
