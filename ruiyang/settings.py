@@ -111,6 +111,66 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+LOGGING = {
+    'version':1,
+    'disable_existing_loggers':True,
+    'formatters':{
+        'standard':{
+            'format':'%(levelname)s %(asctime)s %(message)s'
+        },
+        'verbose':{
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+    },
+    'filters':{
+    },
+     'handlers':{
+         'mail_admins':{
+             'level':'ERROR',
+             'class': 'django.utils.log.AdminEmailHandler',
+             'formatter':'standard',
+             'include_html':True,
+         },
+         'default':{
+             'level':'INFO',
+             'class':'logging.handlers.RotatingFileHandler',
+            'filename':os.path.join(BASE_DIR+'/log/','all.log'),
+            'formatter':'standard',
+         },
+         'console': {
+             'level': 'DEBUG',
+             'class': 'logging.StreamHandler',
+             'formatter':'standard',
+         },
+         'request_handler':{
+             'level':'DEBUG',
+             'class':'logging.handlers.RotatingFileHandler',
+             'filename':os.path.join(BASE_DIR+'/log/','script.log'),
+             'maxBytes':1024*1024*5,
+             'formatter':'standard',
+         },
+     },
+    'loggers': {
+        'django.request': {
+            'handlers': ['request_handler'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'django':{
+            'handlers': ['default','console'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+        'script':{
+            'handlers': ['request_handler'],
+            'level': 'INFO',
+            'propagate': False
+        },
+    },
+}
+
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
@@ -131,6 +191,8 @@ LANGUAGES = (
 )
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
+
+
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')

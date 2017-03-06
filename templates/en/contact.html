@@ -240,6 +240,7 @@
 						<input style="color: #fff;border: 1px solid #fff;" id="email" type="email" name="email" placeholder="Email"  required=""/>
 						<input type="submit" id="sub"  value="submit"  style="margin-left: -6px;" />
 					</form>
+
 				</div>
 				<iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
 				<div class=" clearfix "></div>
@@ -248,19 +249,19 @@
 
 
 <script>
-	 $('#sub').click(function(){
+   $('#sub').click(function(){
      $('#email_put').submit();
      $('#result').html('提交成功');
-
-})
-
+     $('#email').val(' ')
+     return false
+     });
 </script>
-<script>
+	<script>
 	$('#form_submit').click(function(){
 	var tel = $('#tel').val();
 	if (isNaN(tel)){
-	   alert('请输入正确数字')
-	   $('#wron_num').html('请输入数字')
+	     $('#wron_num').html('请输入数字')
+	    alert('请输入正确数字')
 	   document.getElementById('tel').focus();
 	   return false;
 	}
@@ -268,7 +269,9 @@
     document.getElementById('form_put').submit();
     $('#wron_num').html('提交成功')
     }
+
 	})
-</script>
+	</script>
+
  <script type="text/javascript " src="/static/js/bootstrap-3.1.1.min.js "></script>
 {% endblock %}

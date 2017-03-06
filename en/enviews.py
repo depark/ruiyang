@@ -5,6 +5,9 @@ from en.models import *
 from django.http import JsonResponse
 from django.contrib import staticfiles
 import json
+import logging
+
+logger = logging.getLogger(__name__)
 #全局变量
 
 
@@ -84,15 +87,20 @@ def contact_us(request):
         TIJIAO = True
         if not tel.isdigit():
             wrong_init = 'wrong tel!!!'
-        print name,company,tel,country,email,require
+            wong = {'result':wrong_init}
+            return JsonResponse(wong)
+        #print name,company,tel,country,email,require
         try:
             p = Contect(name=name,company=company,tel=tel,country=country,email=email,requ=require)
-            #p.save()
-            print 'p have written!!'
+            p.save()
+            #print 'p have written!!'
             success = 'Thanks for your suggest'
         except Exception as e:
-            print 'error write'
+            #print 'error write'
             success = 'wrong happend ,try later again'
+        result = {'result':success}
+        print result
+        return JsonResponse(result)
 
     #print request.META
     #print 'host is '+request.get_host()
@@ -150,16 +158,21 @@ def show_cers(request):
     return render_to_response('en/exhi.html',locals())
 
 def get_email(request):
+    logger = logging.getLogger(__name__)
     if request.method == 'POST':
+        e_list = []
         email = request.POST['email']
-        print email
+        #print email
         em = Rece_Email.objects.filter(email=email)
-        if not em and  email:
+        for i in em:
+            e_list.append(i)
+        if not e_list and  email  :
             e = Rece_Email(email=email)
             e.save()
-            #print email+'  has written'
+            logger.debug('%s have written in db' % email)
             result = 'Thanks for your find'
         else:
+            logger.error('%s have already exsit' % email)
             result = 'failed'
         result_json = {'result':result}
         return JsonResponse(result_json)
@@ -175,4 +188,4 @@ def get_email(request):
         #return '提交成功'
         #return HttpResponseRedirect(real_url)
     else:
-        return HttpResponse(status=404)
+       return HttpResponse(status=404)

@@ -387,6 +387,16 @@
 				<iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
 			</div>
 		</div>
+		<script>
+	 $('#sub').click(function(){
+     $('#email_put').submit();
+     $('#result').html('提交成功');
+      document.getElementById('email_put').reset();
+      return false
+
+})
+
+</script>
 		<!-- // contact -->
         {% endblock %}
 		<script type="text/javascript " src="/static/js/bootstrap-3.1.1.min.js "></script>
@@ -406,16 +416,7 @@
 				}
 			}
 		</script>
-<script>
-	 $('#sub').click(function(){
-     $('#email_put').submit();
-     $('#result').html('提交成功');
-      document.getElementById('email_put').reset();
-      return false
 
-})
-
-</script>
 
 
 
