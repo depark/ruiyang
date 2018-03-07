@@ -70,6 +70,8 @@ class News(models.Model):
     新闻
     '''
     title = models.CharField('标题',max_length=30)
+    top = models.BooleanField(verbose_name='是否置顶',default=False)
+    picture = models.ImageField(verbose_name='新闻置顶图片',upload_to='top',default='upload/timg.jpeg')
     context = UEditorField('内容',height=300, width=1000,
         default='', blank=True, imagePath="news",
         toolbars='full', filePath='files')
@@ -117,7 +119,7 @@ class Faq(models.Model):
     FAQ问答
     '''
     question = models.CharField(verbose_name='问题',max_length=200)
-    answer = UEditorField('答案',height=500,width=1200,default='u',blank=True,imagePath='faq',toolbars='normal',filePath='files')
+    answer = UEditorField('答案',height=500,width=1200,default=' ',blank=True,imagePath='faq',toolbars='normal',filePath='files')
 
     def __str__(self):
         return self.question
@@ -136,6 +138,10 @@ class Contect(models.Model):
     country = models.CharField('所在国家',max_length=20,blank=True,null=True)
     email = models.EmailField('客户邮件')
     requ = models.TextField('客户意见',blank=True,null=True)
+    time = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         default_permissions = ('change','delete')
@@ -164,7 +170,8 @@ class Advantage(models.Model):
     '''
     name = models.CharField(verbose_name='优势',max_length=20)
     context = models.CharField(verbose_name='内容',max_length=200)
-    image = models.ImageField(verbose_name='图标',upload_to='advantage')
+    #image = models.ImageField(verbose_name='图标',upload_to='advantage',blank=True)
+    #image = models.ImageField(verbose_name='图标',upload_to='advantage',blank=True)
 
     def __str__(self):
         return self.name
@@ -222,6 +229,17 @@ class Rece_Email(models.Model):
         verbose_name = '用户提交的email地址'
         verbose_name_plural = '用户提交的email地址'
 
+class Contact_banner(models.Model):
+    ''''
+    contact的banner页面
+    '''
 
+    name = models.CharField(max_length=20)
+    image= models.ImageField('联系页面banner',upload_to='banner',default='')
 
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'contact页面banner'
 

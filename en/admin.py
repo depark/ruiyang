@@ -58,8 +58,8 @@ class Technologyuse(admin.ModelAdmin):
     list_display = ('ques','ans')
 
 class  contach(admin.ModelAdmin):
-    list_display = ('id','name','company','name','tel','country','email','requ')
-    readonly_fields = ('name','company','name','tel','country','email','requ')
+    list_display = ('id','name','company','name','tel','country','email','requ','time')
+    readonly_fields = ('name','company','name','tel','country','email','requ','time')
 
 class banner_admin(admin.ModelAdmin):
     list_display = ('id','name','images')
@@ -69,10 +69,10 @@ class faq_admin(admin.ModelAdmin):
 
 
 class News_admin(admin.ModelAdmin):
-    list_display = ('id','title','datetime')
+    list_display = ('id','title','datetime','top')
 
 class Advantage_admin(admin.ModelAdmin):
-    list_display = ('id','name','context','image')
+    list_display = ('id','name','context')
 
 class Com_info_admin(admin.ModelAdmin):
     list_display = ('id','name','number','email','trademark')
@@ -81,6 +81,8 @@ class Com_info_admin(admin.ModelAdmin):
 class Index_adv_admin(admin.ModelAdmin):
     list_display = ('title','adv')
 
+class Contact_banner_admin(admin.ModelAdmin):
+    list_display = ('id','name','image')
 
 class Recv_email(admin.ModelAdmin):
     list_display = ('id','email')
@@ -97,8 +99,8 @@ class Recv_email(admin.ModelAdmin):
 #admin.site.register(Com_info,Com_info_admin)
 
 
-
-admin_site.register(Exhi,exhiuse)
+admin_site.register(Contact_banner,Contact_banner_admin)
+#admin_site.register(Exhi,exhiuse)
 admin_site.register(Case,case)
 admin_site.register(Product,productuser)
 admin_site.register(Contect,contach)

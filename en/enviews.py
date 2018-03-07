@@ -45,7 +45,10 @@ def about(request):
         exhi_num.append(exhi)
     #新闻列表
     news = News.objects.all()
+    #置顶新闻排序
+    top_news = News.objects.order_by('-top','-datetime')
     #证书列表
+    img_news = top_news[0]
     cers = Com_cer.objects.all()
     return render_to_response('en/about_us.html',locals())
 
@@ -73,7 +76,7 @@ def infor(request):
 
 def contact_us(request):
     logger = logging.getLogger('django')
-    banner_images = Banner.objects.all().order_by('id')
+    banner_images = Contact_banner.objects.all().order_by('id')[0:1]
     products_list = Product.objects.all()
     advantage_list = Advantage.objects.all()
     be_af_images = Case.objects.all().order_by('id')
@@ -85,11 +88,10 @@ def contact_us(request):
         name = request.POST['Name']
         company = request.POST['Company']
         tel = request.POST['Tel']
-        TIJIAO = True
-        if not tel.isdigit():
-            wrong_init = 'wrong tel!!!'
-            wong = {'result':wrong_init}
-            return JsonResponse(wong)
+        TIJIAO = False
+        if tel is  None:
+            TIJIAO = True
+            success = 'Wrong number'
         #print name,company,tel,country,email,require
         try:
             p = Contect(name=name,company=company,tel=tel,country=country,email=email,requ=require)
@@ -103,7 +105,7 @@ def contact_us(request):
             logger.error('%s suggest can not written in db ' % name)
             success = 'wrong happend ,try later again'
         result = {'result':success}
-        return HttpResponse(json.dumps(result))
+        #return HttpResponse(json.dumps(result))
 
     #print request.META
     #print 'host is '+request.get_host()

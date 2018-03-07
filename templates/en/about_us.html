@@ -141,7 +141,7 @@
 
 		<section id="exhibition" class="page-section page" style="margin-top: 140px;padding-bottom: 40px;
 background: #f2f2f2;">
-			<div class="container text-center">
+			<!--<div class="container text-center">
 				<div class="heading">
 					<h2 style="padding: 40px 0;color: #90005E;">Exhibition</h2>
 				</div>
@@ -173,17 +173,18 @@ background: #f2f2f2;">
 				<div class="col-md-6 content_left wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.2s">
 					<div class="welcome">
 						<h3>News</h3>
+				{% for news in top_news %}
 						<ul>
-							{% for news in news %}
 							<li>
 								<a href="{% url 'news_detail' news.id %}">{{ news.title }}</a><span class="news-date"> {{ news.datetime }}</span></li>
-						    {% endfor %}
 						</ul>
+				{% endfor %}
 					</div>
 				</div>
 				<div class="col-md-6 content_right wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s" style="margin-top: -128px;">
-					<img class="img-responsive" src="/static/images/news_date01.jpg" alt=" " />
+					<img class="img-responsive" src="/upload/{{ img_news.picture}}" />
 				</div>
+
 				<div class="clearfix"></div>
 			</div>
 		</div>
@@ -212,7 +213,7 @@ background: #f2f2f2;">
 		</div>
 		<!-- /Certificate -->
 		<!-- Company history  -->
-		<div class="company-history">
+		<!--<div class="company-history">
 			<div class="container">
 				<div style="position: relative;">
 				</div>
@@ -324,172 +325,9 @@ background: #f2f2f2;">
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
 		<!-- //Company history  -->
 
 {% endblock %}
 
-{% block footer %}
 
-<div class="contact">
-			<div class="container">
-				<div class="col-md-6 contact-right wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s" style="padding-top: 20px;">
-					<h3 style="color: #fff;">Contact Us</h3>
-					<div class="strip" style="margin-top: 5px;"></div>
-					<ul class="con-icons">
-						{% for com_info in com_info %}
-						<li><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>{{ com_info.number}}</li>
-						<li>
-							<a href="mailto:{{ com_info.email }}"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>{{ com_info.email }}</a>
-						</li>
-						{% endfor %}
-					</ul>
-					<ul class="fb_icons">
-						<li class="hvr-rectangle-out">
-							<a class="fb" href="#"></a>
-						</li>
-						<li class="hvr-rectangle-out">
-							<a class="twit" href="#"></a>
-						</li>
-						<li class="hvr-rectangle-out">
-							<a class="goog" href="#"></a>
-						</li>
-						<li class="hvr-rectangle-out">
-							<a class="pin" href="#"></a>
-						</li>
-						<li class="hvr-rectangle-out">
-							<a class="drib" href="#"></a>
-						</li>
-					</ul>
-					<p class="copy-right" style="margin-top: -30px;">{{ com_info.trademark  }}</p>
-				</div>
-
-				<div class="col-md-6 contact-left wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s" style="padding-top: 60px;">
-					<h2 style="color: #fff;">Find a Doctor</h2>
-					{% if email_tijiao %}
-					   <p style="color:#fff;font-size:30px">{{ success }}</p>
-					{% endif %}
-                    <p id='result' style="color:#fff;font-size:30px"></p>
-					<form id="email_put" action="/email/" method="post" style="margin-top: 10px;" target="nm_iframe">
-						<input style="color: #fff;border: 1px solid #fff;" type="email" name="Email" placeholder="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-						<input type="submit" value="submit"  id='sub'  style="margin-left: -6px; />
-						</form>
-				</div>
-				<div class=" clearfix "></div>
-			</div>
-	<iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
-		</div>
-
-	<script type="text/javascript " src="/static/js/bootstrap-3.1.1.min.js "></script>
-    <script>
-	 $('#sub').click(function(){
-     $('#email_put').submit();
-     $('#result').html('提交成功');
-
-})
-
-</script>
-		<script>
-			window.onscroll = function() {
-
-				var scrollTop = document.body.scrollTop;
-
-				if(scrollTop >= 500) {
-
-					$(".dn1 ").css("display ", "block ");
-					$(".dn2 ").css("display ", "none ");
-				} else {
-					$(".dn2 ").css("display ", "block ");
-					$(".dn1 ").css("display ", "none ");
-				}
-			}
-		</script>
-		<script type="text/javascript ">
-//学员
-var _index5=0;
-$("#four_flash .but_right img ").click(function(){
-	_index5++;
-	var len=$(".flashBg ul.mobile li ").length;
-	if(_index5+5>len){
-		$("#four_flash .flashBg ul.mobile ").stop().append($("ul.mobile ").html());
-	}
-	$("#four_flash .flashBg ul.mobile ").stop().animate({left:-_index5*326},1000);
-	});
-
-
-$("#four_flash .but_left img ").click(function(){
-	if(_index5==0){
-		$("ul.mobile ").prepend($("ul.mobile ").html());
-		$("ul.mobile ").css("left ","-1380px ");
-		_index5=6
-	}
-	_index5--;
-	$("#four_flash .flashBg ul.mobile ").stop().animate({left:-_index5*326},1000);
-	});
-</script>
-
-<!-- 公司历程 -->
-		<script>
-	$(function(){
-		var aboutWidth = $(".about ").width();
-		$(".process-timeline ").width(aboutWidth);
-		var lastRightSpeed = 40; //控制拖动到最右边点是否对准时间刻度线上
-		var processtimelineW = $(".process-timeline ").width();
-		var processrowLength = $(".process-body ").find('.process-row').length;
-		var processbodyNumber = processrowLength*200;
-		$(".process-body ").css({"width ":processbodyNumber});
-
-		if(processrowLength < 5)
-		{
-			$("#draggable ").draggable('disable');
-			return;
-		}
-		$("#processLeft ").click(function(){
-			var processContentW = $(".process-content ").width();
-			var processBodyW = $(".process-body ").width();
-			var processBodyML = parseInt($(".ui-draggable ").css("left "));
-			if ( (Math.abs(processBodyML)+processtimelineW) >= processBodyW ) {
-				return;
-			}
-			$(".ui-draggable ").css({"left ":processBodyML-50});
-		});
-		$("#processRight ").click(function(){
-			var processBodyML = parseInt($(".ui-draggable ").css("left "));
-			if (processBodyML == 0) {
-				return;
-			}
-			$(".ui-draggable ").css({"left ":processBodyML+50});
-		});
-
-		$(document).keydown(function(event){
-			if (event.keyCode == 39) {
-			   $("#processLeft ").click();
-			}
-			if (event.keyCode == 37) {
-			   $("#processRight ").click();
-			}
-		});
-
-		$("#draggable ").draggable({
-			cursor: "move ",
-			axis: 'x',
-			grid: [50, 20],
-			stop: function(event, ui){
-				var FleftNumber = parseInt($("#draggable ").css("left "));
-				if (FleftNumber > 0) {
-					$("#draggable ").animate({"left ": 0}, 500);
-					return;
-				};
-				var leftNumber = Math.abs(FleftNumber);
-				leftNumber = leftNumber + processtimelineW;
-				if (leftNumber > processbodyNumber)
-				{
-					leftNumber = processbodyNumber;
-					$("#draggable ").animate({"left ": -(leftNumber-processtimelineW + lastRightSpeed)}, 500);
-				}
-			}
-		});
-	})
-</script>
-
-{% endblock %}

@@ -82,6 +82,10 @@ body a:hover{
     border-right: 1px solid #9caec2;
 }
 
+.contact-left1 {
+    border-right: 1px solid #9caec2;
+}
+
 .contact-left input[type="text"], .contact-left input[type="email"] {
     border: 1px solid #fff;
     width: 48%;
@@ -93,6 +97,21 @@ body a:hover{
     -webkit-appearance: none;
     background: none;
 }
+
+
+.contact-left1 input[type="text"], .contact-left1 input[type="email"] {
+    border: 1px solid #fff;
+    width: 48%;
+    margin: 0 0 1.9em 0;
+    outline: none;
+    font-size: 13px;
+    color: #fff;
+    padding: 10px 12px;
+    -webkit-appearance: none;
+    background: none;
+}
+
+
 .contact-left input[type="submit"] {
     border: none;
     padding: 6px 0 9px;
@@ -110,12 +129,61 @@ body a:hover{
     -ms-transition: 0.5s all ease;
     -webkit-appearance: none;
 }
+
+
+.contact-left1 input[type="submit"] {
+    border: none;
+    padding: 6px 0 9px;
+    width: 22%;
+    margin-top: 0px;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 1px;
+    outline: none;
+    background: #FDA30E;
+    transition: 0.5s all ease;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    -ms-transition: 0.5s all ease;
+    -webkit-appearance: none;
+}
+
+.contact-left input[type="button"] {
+    border: none;
+    padding: 6px 0 9px;
+    width: 22%;
+    margin-top: 0px;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 1px;
+    outline: none;
+    background: #FDA30E;
+    transition: 0.5s all ease;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    -ms-transition: 0.5s all ease;
+    -webkit-appearance: none;
+}
+
 .contact-left input[type="submit"]:hover{
 	background: #00A4E4;
 }
+
+.contact-left1 input[type="submit"]:hover{
+	background: #00A4E4;
+}
+
 .contact-left form{
 	margin-top:35px;
 }
+
+.contact-left1 form{
+	margin-top:35px;
+}
+
+
 .contact-right input[type="text"], .contact-right input[type="email"] {
     border: 1px solid #fff;
     width: 38%;
@@ -127,6 +195,21 @@ body a:hover{
     -webkit-appearance: none;
     background: none;
 }
+
+
+.contact-right1 input[type="text"], .contact-right1 input[type="email"] {
+    border: 1px solid #fff;
+    width: 38%;
+    margin: 0 0 1.9em 0;
+    outline: none;
+    font-size: 13px;
+    color: #fff;
+    padding: 10px 12px;
+    -webkit-appearance: none;
+    background: none;
+}
+
+
 .contact-right input[type="submit"] {
     border: none;
     padding: 7px 0 9px;
@@ -144,12 +227,43 @@ body a:hover{
     -ms-transition: 0.5s all ease;
     -webkit-appearance: none;
 }
+
+.contact-right1 input[type="submit"] {
+    border: none;
+    padding: 7px 0 9px;
+    width: 22%;
+    margin-top: 0px;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 1px;
+    outline: none;
+    background: #FDA30E;
+    transition: 0.5s all ease;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    -ms-transition: 0.5s all ease;
+    -webkit-appearance: none;
+}
+
+
 .contact-right input[type="submit"]:hover{
 	background: #00A4E4;
 }
+
+.contact-right1 input[type="submit"]:hover{
+	background: #00A4E4;
+}
+
 .contact-right form{
 	margin-top:35px;
 }
+
+.contact-right1 form{
+	margin-top:35px;
+}
+
+
 ul.con-icons li {
     color: #9caec2;
     list-style-type: none;
@@ -1835,7 +1949,7 @@ p.para_abt {
     font-size: 14px;
     line-height: 2em;
     color: #464646;
-    margin-top: 1.2em;
+    margin-top: 1.0em;
 }
 
 .choose-grid:nth-child(2) {
@@ -3376,7 +3490,7 @@ footer {
     margin-top: 20px;
 }
 .glyphicon-a{
-	background: url(../images/3.jpg) no-repeat;
+	background: url(../images/111.jpg) no-repeat;
     background-size: 25px;
     background-position: 50%
 }
@@ -3386,7 +3500,7 @@ footer {
     background-position: 50%
 }
 .glyphicon-c{
-	background: url(../images/3.jpg) no-repeat;
+	background: url(../images/111.jpg) no-repeat;
     background-size: 25px;
     background-position: 50%
 }

@@ -219,14 +219,15 @@
 		<div class="works" style="background: #F2F2F2;padding: 50px 0;">
 			<div class="container">
 				<div class="col-md-4 about_img wow fadeInRight animated" data-wow-delay=".5s" style="position: relative;">
-					<img src="/static/images/works.png" alt="" style="width: 100%;">
-					<button type="button" class="works_circle" style="position: absolute;left: 200px;top: 100px;"><p class="works_des">Forehead furrows</p></button>
-					<button type="button" class="works_circle" style="position: absolute;left: 220px;top: 130px;"><p class="works_des">Crow's feet</p></button>
-					<button type="button" class="works_circle" style="position: absolute;left: 180px;top: 150px;"><p class="works_des">Nose bridge</p></button>
-					<button type="button" class="works_circle" style="position: absolute;left: 210px;top: 170px;"><p class="works_des">Fill in apple muscle</p></button>
-					<button type="button" class="works_circle" style="position: absolute;left: 120px;top: 180px;"><p class="works_des1">Fill in apple muscle</p></button>
-					<button type="button" class="works_circle" style="position: absolute;left: 130px;top: 205px;"><p class="works_des1">Fill in apple muscle</p></button>
-					<button type="button" class="works_circle" style="position: absolute;left: 160px;top: 230px;"><p class="works_des1">Fill in apple muscle</p></button>
+					<img src="/static/images/WORKING.png" alt="" style="width: 100%;">
+					<button type="button" class="works_circle" style="position: absolute;left: 183px;top: 143px;"><p class="works_des">Remove crow's feet</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 90px;top: 180px;;"><p class="works_des">Fill in apple muscle</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 133px;top: 110px;"><p class="works_des1">Smooth Forehead furrows</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 161px;top: 180px;"><p class="works_des1">Fill in Perioral wrinkles</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 134px;top: 155px;"><p class="works_des1">Define nose bridge</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 134px;top: 210px;"><p class="works_des1">Volumize lips and define border</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 134px;top: 233px;"><p class="works_des1">Contour chin and jaw</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 110px;top: 155px;"><p class="works_des1">Remove bags and dark circles under eyes</p></button>
 				</div>
 				<div class="col-md-8 about_img about_img_left">
 					<div class="choose-grid wow fadeInRight animated" data-wow-delay=".5s">
@@ -256,13 +257,16 @@
 				<div class="col-md-4 services_left wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="0s">
 					<h3>{{ adv.title }}</h3>
 					<p class="ser-para">{{ adv.adv }}</p>
+					<p class="ser-para">Doctors think HAderm products are easy to inject, the patient's pain is lighter.
+The patient believes that the HAderm product is quick and can significantly improve facial contours.
+</p>
 					<div class="clearfix"></div>
 				</div>
 				{% endfor %}
 				<div class="col-md-8 services_right ">
 					{% for adv in advantage_list %}
 					<div class="list-left text-center no_marg wow bounceInDown product-adv" data-wow-duration="1.5s" data-wow-delay="0.1s">
-						<span class="glyphicon glyphicon-a product-adv-list-icon" aria-hidden="true"><img src="/upload/{{ adv.image }}" style="width: 25px;height: 25px;"></span>
+						<span class="glyphicon glyphicon-plus product-adv-list-icon" aria-hidden="true"></span>
 						<div class="product-adv-list">
 							<h4>{{ adv.name }}</h4>
 							<p>{{ adv.context }}</p>
@@ -341,7 +345,7 @@
 		{% endblock %}
 
 
-        {% block footer %}
+{% block footer %}
 		<!-- contact -->
 		<div class="contact">
 			<div class="container">
@@ -378,27 +382,32 @@
 				<div class="col-md-6 contact-left wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s" style="padding-top: 60px;">
 					<h2>Find a Doctor</h2>
 					 <p id='result' style="color:#fff;font-size:30px"></p>
-					<form id = 'email_put' action="/email/" method="post" style="margin-top: 10px;" target="nm_iframe">
-						<input type="email" name="email" placeholder="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-						<input type="submit" value="submit"  id = 'sub' style="margin-left: -6px; />
+					<form id = 'email_put' action="/email/" method="post" style="margin-top: 10px;" target="form_iframe">
+						<input type="email" id="email" name="email" placeholder="Email"  required="required">
+						<input id="subEmail" type="submit" value="submit"  id = 'sub' style="margin-left: -6px; />
 						</form>
 				</div>
-				<div class=" clearfix "></div>
-				<iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe>
+				<div class=" >
+				<iframe id="id_iframe" name="form_iframe" style="display:none;"></iframe>
 			</div>
-		</div>
-		<script>
-	 $('#sub').click(function(){
-     $('#email_put').submit();
-     $('#result').html('提交成功');
-      document.getElementById('email_put').reset();
-      return false
+			</div>
+			</div>
 
-})
+	<script>
+	$('#subEmail').click(function () {
+        var email = $('#email').val()
+        if (!email){
+            $('#email').focus();
+            return false;
+        }
+        $('#email_put').submit();
+        $('#email').val(' ');
+        alert('Commit sucess');
+    })
+
+
 
 </script>
-		<!-- // contact -->
-        {% endblock %}
 		<script type="text/javascript " src="/static/js/bootstrap-3.1.1.min.js "></script>
 		<!-- head切换 -->
 		<script>
@@ -416,7 +425,8 @@
 				}
 			}
 		</script>
-
+		<!-- // contact -->
+{% endblock %}
 
 
 
