@@ -3398,7 +3398,7 @@ footer {
 .menu__item ul{
     width: 100px;
     background: #fff;
-    left: 10px;
+    left: 0;
     margin: 0;
     padding: 0;
     position: absolute;

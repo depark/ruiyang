@@ -15,7 +15,7 @@
 		<link href="/static/css/style.css" rel="stylesheet" type="text/css" media="all" />
 		<!-- js -->
 		<script type="text/javascript" src="/static/js/jquery-2.1.4.min.js"></script>
-		<script type="text/javascript" src="/static/js/numscroller-1.0.js"></script>
+		<!--<script type="text/javascript" src="/static/js/numscroller-1.0.js"></script>-->
 		<!-- start-smoth-scrolling -->
 		<script type="text/javascript" src="/static/js/move-top.js"></script>
 		<script type="text/javascript" src="/static/js/easing.js"></script>
@@ -31,7 +31,22 @@
 			});
 		</script>
 		<!-- start-smoth-scrolling -->
+        <style>
+            .col-md-8 {
+                position: relative;
+                min-height: 1px;
+                padding-right: 35px;
+                padding-left: 153px;
+            }
 
+            .col-md-6 {
+                position: relative;
+                min-height: 1px;
+                padding-right: 35px;
+                padding-left: 3px;
+            }
+
+        </style>
 		<!--start-date-piker-->
 		<script src="/static/js/jquery-ui.js"></script>
 		<script>
@@ -185,7 +200,7 @@
 				<ul class="rslides" id="slider3">
 					{% for banner in banner_images %}
 					<li>
-						<img src="/upload/{{ banner.images }}" style="position: relative;width: 100%;height: 100%;" />
+						<img src="/upload/{{ banner.images }}" style="position: relative;width: 100%;height: 50%;" height="200px" width="200px" />
 						<div class="banner1">
 						</div>
 					</li>
@@ -205,7 +220,7 @@
 					<div class="team-img">
 						<a href="{% url 'show_pro' product.name %}">
 							<img class="img-responsive" src="/upload/{{ product.image }}" alt=" " />
-							<p class="team-more">{{ product.name }}</p>
+							<p style="color: #000">{{ product.name }}</p>
 						</a>
 					</div>
 				</div>
@@ -219,26 +234,27 @@
 		<div class="works" style="background: #F2F2F2;padding: 50px 0;">
 			<div class="container">
 				<div class="col-md-4 about_img wow fadeInRight animated" data-wow-delay=".5s" style="position: relative;">
-					<img src="/static/images/WORKING.png" alt="" style="width: 100%;">
-					<button type="button" class="works_circle" style="position: absolute;left: 183px;top: 143px;"><p class="works_des">Remove crow's feet</p></button>
-					<button type="button" class="works_circle" style="position: absolute;left: 90px;top: 180px;;"><p class="works_des">Fill in apple muscle</p></button>
-					<button type="button" class="works_circle" style="position: absolute;left: 133px;top: 110px;"><p class="works_des1">Smooth Forehead furrows</p></button>
-					<button type="button" class="works_circle" style="position: absolute;left: 161px;top: 180px;"><p class="works_des1">Fill in Perioral wrinkles</p></button>
-					<button type="button" class="works_circle" style="position: absolute;left: 134px;top: 155px;"><p class="works_des1">Define nose bridge</p></button>
-					<button type="button" class="works_circle" style="position: absolute;left: 134px;top: 210px;"><p class="works_des1">Volumize lips and define border</p></button>
-					<button type="button" class="works_circle" style="position: absolute;left: 134px;top: 233px;"><p class="works_des1">Contour chin and jaw</p></button>
-					<button type="button" class="works_circle" style="position: absolute;left: 110px;top: 155px;"><p class="works_des1">Remove bags and dark circles under eyes</p></button>
+					<img src="/static/images/WORKING.png" alt="" style="width: 160%;">
+					<button type="button" class="works_circle" style="position: absolute;left: 300px;top: 223px;"><p class="works_des">Remove crow's feet</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 140px;top: 290px;"><p class="works_des1">Fill in apple muscle</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 210px;top: 170px;"><p class="works_des1">Smooth Forehead furrows</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 260px;top:300px;"><p class="works_des">Fill in Perioral wrinkles</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 210px;top: 260px;"><p class="works_des1">Define nose bridge</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 210px;top: 340px;"><p class="works_des1">Volumize lips and define border</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 210px;top: 375px;"><p class="works_des">Contour chin and jaw</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left:166px;top: 247px;"><p class="works_des1">Remove bags and dark circles under eyes</p></button>
 				</div>
-				<div class="col-md-8 about_img about_img_left">
-					<div class="choose-grid wow fadeInRight animated" data-wow-delay=".5s">
+				<div class="col-md-8 about_img about_img_left" style="padding-left: 50px; left: 120px; height: 550px; right: 50px;">
+					<div class="choose-grid wow fadeInRight animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
 						<h4>How does HAderm work?</h4>
-						<p>During the aging process, the human face loses fat and volume while the skin loses collagen and elasticity. Through nonsurgical injections, HAderm is specifically designed to add fullness to the cheeks and midface area, which can result in a more natural-looking, youthful appearance.</p>
+						<p>During the aging process, the human face loses fat and volume while the skin loses collagen and elasticity. 
+                         Through nonsurgical injections, HAderm is specifically designed to add fullness to the cheeks and midface area, which can result in a more natural-looking, youthful appearance.</p>
 						<p>HAderm’s products are formulated to act like your body's own naturally occurring hyaluronic acid, restoring volume to your skin.</p>
-						<div class="col-md-6 about_img about_img_left" style="text-align: center;">
+						<div class="col-md-6 about_img about_img_left" style="text-align: center;top: 80px;">
 							<img src="/static/images/skin_01.png" alt="">
 							<p>HA decreased, leading to collagen reduction.</p>
 						</div>
-						<div class="col-md-6 about_img about_img_left" style="text-align: center;">
+						<div class="col-md-6 about_img about_img_left" style="text-align: center;top: 80px;">
 							<img src="/static/images/skin_02.png" alt="">
 							<p>Injection of HAderm to restore the skin young.</p>
 						</div>
@@ -350,7 +366,7 @@ The patient believes that the HAderm product is quick and can significantly impr
 		<div class="contact">
 			<div class="container">
 				{% for com_info in com_info  %}
-				<div class="col-md-6 contact-right wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s" style="padding-top: 20px;">
+				<div class="col-md-6 contact-right wow fadeIn animated animated" data-wow-delay="0.1s" data-wow-duration="2s" style="padding-top: 20px;left: 20px;padding-left: 20px">
 					<h3>Contact Us</h3>
 					<div class="strip" style="margin-top: 5px;"></div>
 					<ul class="con-icons">
