@@ -239,7 +239,7 @@
 					<button type="button" class="works_circle" style="position: absolute;left: 140px;top: 290px;"><p class="works_des1">Fill in apple muscle</p></button>
 					<button type="button" class="works_circle" style="position: absolute;left: 210px;top: 170px;"><p class="works_des1">Smooth Forehead furrows</p></button>
 					<button type="button" class="works_circle" style="position: absolute;left: 260px;top:300px;"><p class="works_des">Fill in Perioral wrinkles</p></button>
-					<button type="button" class="works_circle" style="position: absolute;left: 210px;top: 260px;"><p class="works_des1">Define nose bridge</p></button>
+					<button type="button" class="works_circle" style="position: absolute;left: 210px;top: 260px;"><p class="works_des">Define nose bridge</p></button>
 					<button type="button" class="works_circle" style="position: absolute;left: 210px;top: 340px;"><p class="works_des1">Volumize lips and define border</p></button>
 					<button type="button" class="works_circle" style="position: absolute;left: 210px;top: 375px;"><p class="works_des">Contour chin and jaw</p></button>
 					<button type="button" class="works_circle" style="position: absolute;left:166px;top: 247px;"><p class="works_des1">Remove bags and dark circles under eyes</p></button>
@@ -256,7 +256,7 @@
 						</div>
 						<div class="col-md-6 about_img about_img_left" style="text-align: center;top: 80px;">
 							<img src="/static/images/skin_02.png" alt="">
-							<p>Injection of HAderm to restore the skin young.</p>
+							<p style="margin-top: 20px">Injection of HAderm to restore the skin young.</p>
 						</div>
 					</div>
 				</div>
@@ -304,11 +304,11 @@ The patient believes that the HAderm product is quick and can significantly impr
 					<div class="film_focus_desc">
 						<ul class="film_focus_nav">
 							{% for case in be_af_images %}
-							{% if forloop.first %}
-							<li class="{{ class1 }}"> <b>{{ case.name }}</b><span>{{ case.name }}</span> </li>
-							{% else %}
-							<li class="{{ class2 }}"> <b>{{ case.name }}</b><span>{{ case.name }}</span> </li>
-							{% endif %}
+                            {% if forloop.first%}
+							<li style="margin-top: 23px" class={{ class1 }}> <b>{{ case.name }}</b><span>{{ case.name }}</span> </li>
+                            {% else %}
+                            <li style="margin-top: 23px" class={{ class2 }}> <b>{{ case.name }}</b><span>{{ case.name }}</span> </li>
+                            {% endif %}
 							{% endfor %}
 						</ul>
 					</div>

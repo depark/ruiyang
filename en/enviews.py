@@ -23,6 +23,7 @@ def index(request):
     title = 'Home'
     #first loop
     class1 = 'cur'
+    #class2 = None
     #second loop
     class2 = None
 

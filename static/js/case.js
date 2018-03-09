@@ -93,7 +93,7 @@ $(function(){
 	$(".film_focus").th_video_focus({
 		navContainerClass:".film_focus_nav",
 		focusContainerClass:".film_focus_imgs",
-		delayTime:3000
+		delayTime:300000
 	});
 	
 });	
