@@ -1187,7 +1187,7 @@ top: 9%;
 /*-- //content --*/
 /*-- services --*/
 .services{
-    background: url(../images/pic2.jpg) no-repeat center;
+    background: url(../images/pic3.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -1201,7 +1201,7 @@ top: 9%;
 }
 .services_left p.ser-para {
 	line-height:2.2em;
-	color:#fff;
+	color:#000;
 	font-size:14px;
     margin: 27px 0 35px;
 }
@@ -1227,10 +1227,10 @@ top: 9%;
     color: #FDA30E;
     font-size: 25px;
     padding: 20px 20px;
-    border: 1px solid #fff;
+    border: 1px solid #000;
 }
 .list-left:hover.list-left span {
-    color: #fff;
+    color: #000;
     border: 1px solid #FDA30E;
 	border-radius:100%;
     -webkit-border-radius:100%;
@@ -1249,7 +1249,7 @@ top: 9%;
     margin: 12px 0;
 }
 .list-left p {
-    color: #fff;
+    color: #000;
     line-height: 2.2em;
     font-size: 14px;
 }

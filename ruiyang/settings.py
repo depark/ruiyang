@@ -200,6 +200,7 @@ STATICFILES_DIRS = (
     ('css',os.path.join(STATIC_ROOT,'css')),
     ('js',os.path.join(STATIC_ROOT,'js')),
     ('images',os.path.join(STATIC_ROOT,'images')),
+    ('img',os.path.join(STATIC_ROOT,'img')),
     ('fonts', os.path.join(STATIC_ROOT, 'fonts')),
 )
 LOCALE_PATHS = (os.path.join(BASE_DIR,'local'),)

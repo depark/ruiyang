@@ -240,8 +240,7 @@
 					<button type="button" class="works_circle" style="position: absolute;left: 210px;top: 170px;"><p class="works_des1">Smooth Forehead furrows</p></button>
 					<button type="button" class="works_circle" style="position: absolute;left: 260px;top:300px;"><p class="works_des">Fill in Perioral wrinkles</p></button>
 					<button type="button" class="works_circle" style="position: absolute;left: 210px;top: 260px;"><p class="works_des">Define nose bridge</p></button>
-					<button type="button" class="works_circle" style="position: absolute;left: 210px;top: 340px;"><p class="works_des1">Volumize lips and define border</p></button>
-					<button type="button" class="works_circle" style="position: absolute;left: 210px;top: 375px;"><p class="works_des">Contour chin and jaw</p></button>
+x					<button type="button" class="works_circle" style="position: absolute;left: 210px;top: 375px;"><p class="works_des">Contour chin and jaw</p></button>
 					<button type="button" class="works_circle" style="position: absolute;left:166px;top: 247px;"><p class="works_des1">Remove bags and dark circles under eyes</p></button>
 				</div>
 				<div class="col-md-8 about_img about_img_left" style="padding-left: 50px; left: 120px; height: 550px; right: 50px;">
@@ -270,7 +269,8 @@
 		<div class="services">
 			<div class="container">
 				{% for adv in adv%}
-				<div class="col-md-4 services_left wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="0s">
+				<div class="col-md-4 services_left wow bounceInDown" data-wow-duration="1.5s" data-wow-delay="0s"
+					 style="visibility: visible;animation-duration: 1.5s;animation-delay: 0s;animation-name: bounceInDown;left: 80px;">
 					<h3>{{ adv.title }}</h3>
 					<p class="ser-para">{{ adv.adv }}</p>
 					<p class="ser-para">Doctors think HAderm products are easy to inject, the patient's pain is lighter.
@@ -279,7 +279,7 @@ The patient believes that the HAderm product is quick and can significantly impr
 					<div class="clearfix"></div>
 				</div>
 				{% endfor %}
-				<div class="col-md-8 services_right ">
+				<div class="col-md-8 services_right " style="left: 50px;">
 					{% for adv in advantage_list %}
 					<div class="list-left text-center no_marg wow bounceInDown product-adv" data-wow-duration="1.5s" data-wow-delay="0.1s">
 						<span class="glyphicon glyphicon-plus product-adv-list-icon" aria-hidden="true"></span>
