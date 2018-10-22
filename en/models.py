@@ -184,11 +184,11 @@ class Com_info(models.Model):
     '''
     公司信息展示
     '''
-    name = models.CharField(verbose_name='公司名',max_length=30)
-    number = models.CharField(verbose_name='公司号码',max_length=20)
+    name = models.CharField(verbose_name='公司名',max_length=300)
+    number = models.CharField(verbose_name='公司号码',max_length=200)
     email = models.EmailField(verbose_name='公司邮箱',null=False)
-    trademark = models.CharField(verbose_name='公司版权',max_length=50)
-    addr = models.CharField(verbose_name='公司地址',max_length=50)
+    trademark = models.CharField(verbose_name='公司版权',max_length=500)
+    addr = models.CharField(verbose_name='公司地址',max_length=500)
     fa = models.URLField(verbose_name='facebook链接',null=True,blank=True)
     tw = models.URLField(verbose_name='twitter链接',null=True,blank=True)
     go = models.URLField(verbose_name='google链接', null=True, blank=True)
