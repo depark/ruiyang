@@ -119,7 +119,7 @@ class Faq(models.Model):
     FAQ问答
     '''
     question = models.CharField(verbose_name='问题',max_length=200)
-    answer = UEditorField('答案',height=500,width=1200,default=' ',blank=True,imagePath='faq',toolbars='normal',filePath='files')
+    answer = UEditorField('答案',height=500,width=1200,default=' ',blank=True,imagePath='faq',toolbars='besttome',filePath='files')
 
     def __str__(self):
         return self.question
