@@ -63,7 +63,7 @@
 										<ul>
 											{% for product in products_list %}
 											<li>
-												<a href="{% url 'show_pro' product.name %}">{{ product.name }}</a>
+												<a href="{% url 'show_pro' product.id %}">{{ product.name }}</a>
 											</li>
 											{% endfor %}
 										</ul>
@@ -116,7 +116,7 @@
 										<ul>
 											{% for product in products_list %}
 											<li>
-												<a href="{% url 'show_pro' product.name %}">{{ product.name }}</a>
+												<a href="{% url 'show_pro' product.id %}">{{ product.name }}</a>
 											</li>
 											{% endfor %}
 										</ul>

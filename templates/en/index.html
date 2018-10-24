@@ -99,7 +99,7 @@
 										<ul>
 											{% for product in products_list %}
 											<li>
-												<a href="{% url 'show_pro' product.name %}">{{ product.name }}</a>
+												<a href="{% url 'show_pro' product.id %}">{{ product.name }}</a>
 											</li>
 											{% endfor %}
 										</ul>
@@ -152,7 +152,7 @@
 										<ul>
 											{% for product in products_list %}
 											<li>
-												<a href="{% url 'show_pro' product.name %}">{{ product.name }}</a>
+												<a href="{% url 'show_pro' product.id %}">{{ product.name }}</a>
 											</li>
 											{% endfor %}
 										</ul>
@@ -218,7 +218,7 @@
 				{% for product in products_list %}
 				<div class="col-md-4 ind-gds text-center wow zoomIn" data-wow-duration="1.5s" data-wow-delay="0.1s">
 					<div class="team-img">
-						<a href="{% url 'show_pro' product.name %}">
+						<a href="{% url 'show_pro' product.id %}">
 							<img class="img-responsive" src="/upload/{{ product.image }}" alt=" " />
 							<p style="color: #000">{{ product.name }}</p>
 						</a>

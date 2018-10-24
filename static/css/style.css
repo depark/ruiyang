@@ -38,7 +38,7 @@ body a:hover{
 /*-- contact --*/
 .contact{
 	/*background:#253b50;*/
-	background:#90005e;
+	background:#845798;
 }
 .contact-left{
     padding:100px 0 55px;
@@ -1133,12 +1133,21 @@ top: 9%;
     text-indent: 2em;
 }
 .content_left ul li a{
-    color: #333;
+    font-size: 20px;
+    color: #ac4086;
     text-decoration: none;
     display: inline-block;
     /*background: url(../images/ar1.png) no-repeat 0px 2px;
     padding-left: 36px;	*/
 }
+
+
+.content_left ul li a:hover {
+    color:#ac4086;
+    text-decoration:underline;
+}
+
+
 
 .content_left h3 {
     color: #333;

@@ -123,13 +123,13 @@ def pro(request):
         print(i.name)
     return render_to_response('en/products.html',locals())
 
-def show_pro_detail(request,pname):
+def show_pro_detail(request,id):
     banner_images = Banner.objects.all().order_by('id')
     products_list = Product.objects.all()
     advantage_list = Advantage.objects.all()
     be_af_images = Case.objects.all().order_by('id')
     com_info = Com_info.objects.order_by('id')[0:1]
-    pro = Product.objects.get(name = pname)
+    pro = Product.objects.get(id = id)
     title = pro.name
     #print(pro.name,pro.image)
 

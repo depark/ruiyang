@@ -32,7 +32,7 @@ urlpatterns = [
     #url(r'^user/', admin.site.urls),
     url(r'^$', enviews.index,name='english'),
     #url(r'^product/(?P<pname>\d{1,3})/$',enviews.show_pro_detail,name='show_pro'),
-    url(r'^product/(?P<pname>[0-9A-Za-z]+)/$',enviews.show_pro_detail,name='show_pro'),
+    url(r'^product/(?P<id>[0-9]+)/$',enviews.show_pro_detail,name='show_pro'),
  #   url(r'^captcha/',include('captcha.urls')),
     url(r'^about_us/$', enviews.about),
     url(r'^about_us/exhi/(?P<id>[0-9]+)', enviews.exhi_detail,name='exhi_detail'),
