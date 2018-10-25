@@ -142,30 +142,7 @@
 
 		<section id="exhibition" class="page-section page" style="margin-top: 140px;padding-bottom: 40px;
 background: #f2f2f2;">
-			<!--<div class="container text-center">
-				<div class="heading">
-					<h2 style="padding: 40px 0;color: #90005E;">Exhibition</h2>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<div id="portfolio">
-							<ul class="items list-unstyled clearfix animated fadeInRight showing" data-animation="fadeInRight" style="margin-top: -40px;">
-                               {% for id,num,title,image in exhi_num%}
-								<li class="item branding">
-									<a href="{% url 'exhi_detail' id%}" class="fancybox">
-										<span class="num_total">{{ num }}</span>
-										<img src="/upload/{{ image }}" alt="">
-										<div class="overlay"> <span>{{ title }}</span> </div>
-									</a>
-								</li>
-								{% endfor %}
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- //exhibition -->
+
 
         <!-- news -->
 		<div class="content">
@@ -192,7 +169,7 @@ background: #f2f2f2;">
 		<!-- //news -->
 
 <!-- Certificate -->
-				<div class="container" style="width: 100%;background: #F7F7F7;">
+			<div class="container" style="width: 100%;background: #F7F7F7;">
 			<h3 class="tittle" style="margin: 40px;">Certificate</h3>
 			<div class="bodyCon08">
 				<div class="students">
@@ -213,146 +190,6 @@ background: #f2f2f2;">
 			</div>
 		</div>
 
-
-<script type="text/javascript ">
-//学员
-var _index5=0;
-$("#four_flash .but_right img ").click(function(){
-	_index5++;
-	var len=$(".flashBg ul.mobile li ").length;
-	if(_index5+5>len){
-		$("#four_flash .flashBg ul.mobile ").stop().append($("ul.mobile ").html());
-	}
-	$("#four_flash .flashBg ul.mobile ").stop().animate({left:-_index5*326},1000);
-	});
-
-
-$("#four_flash .but_left img ").click(function(){
-	if(_index5==0){
-		$("ul.mobile ").prepend($("ul.mobile ").html());
-		$("ul.mobile ").css("left ","-1380px ");
-		_index5=6
-	}
-	_index5--;
-	$("#four_flash .flashBg ul.mobile ").stop().animate({left:-_index5*326},1000);
-	});
-</script>
-		<!-- /Certificate -->
-		<!-- Company history  -->
-		<!--<div class="company-history">
-			<div class="container">
-				<div style="position: relative;">
-				</div>
-				<div class="row">
-					<div class="col-md-12 about">
-						<div class="about-body" style="position: relative;">
-							<div class="about-title text-center">
-								<h1 style="margin: 50px 0 10px 0;color: #90005e;">History</h1>
-							</div>
-							<div class="about-content process-content">
-								<div class="process-timeline draggable ui-widget-content">
-									<div id="draggable">
-										<div class="process-body">
-											<div class="process-row">
-												<div class="process-time">
-													<div class="time-con">
-														<span class="bgcolor red"></span>
-														<span class="year">2012</span>
-														<span class="pic red"><i class="fa fa-map-marker"></i></span>
-													</div>
-												</div>
-												<div class="process-noyear">
-													First year
-												</div>
-												<div class="process-content" style="margin-top: 50px;">
-													<h2>Preparatory</h2>
-													<p>
-														Interest preparatory group set up relevant information
-													</p>
-												</div>
-											</div>
-											<div class="process-row ">
-												<div class="process-time">
-													<div class="time-con">
-														<span class="bgcolor blue"></span>
-														<span class="year">2013</span>
-														<span class="pic blue"><i class="fa fa-map-marker"></i></span>
-													</div>
-												</div>
-												<div class="process-noyear">
-													Second years
-												</div>
-												<div class="process-content">
-													<h2>Preparatory</h2>
-													<p>
-														Interest preparatory group set up relevant information
-													</p>
-												</div>
-											</div>
-											<div class="process-row ">
-												<div class="process-time">
-													<div class="time-con">
-														<span class="bgcolor red"></span>
-														<span class="year">2014</span>
-														<span class="pic red"><i class="fa fa-map-marker"></i></span>
-													</div>
-												</div>
-												<div class="process-noyear">
-													Third years
-												</div>
-												<div class="process-content" style="margin-top: 50px;">
-													<h2>Preparatory</h2>
-													<p>
-														Interest preparatory group set up relevant information
-													</p>
-												</div>
-											</div>
-											<div class="process-row ">
-												<div class="process-time">
-													<div class="time-con">
-														<span class="bgcolor orange"></span>
-														<span class="year">2015</span>
-														<span class="pic orange"><i class="fa fa-map-marker"></i></span>
-													</div>
-												</div>
-												<div class="process-noyear">
-													Fourth years
-												</div>
-												<div class="process-content">
-													<h2>Preparatory</h2>
-													<p>
-														Interest preparatory group set up relevant information
-													</p>
-												</div>
-											</div>
-											<div class="process-row ">
-												<div class="process-time">
-													<div class="time-con">
-														<span class="bgcolor orange"></span>
-														<span class="year">2016</span>
-														<span class="pic orange"><i class="fa fa-map-marker"></i></span>
-													</div>
-												</div>
-												<div class="process-noyear">
-													Fifth years
-												</div>
-												<div class="process-content" style="margin-top: 50px;">
-													<h2>Preparatory</h2>
-													<p>
-														Interest preparatory group set up relevant information
-													</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>-->
-		<!-- //Company history  -->
 
 {% endblock %}
 
