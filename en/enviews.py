@@ -6,6 +6,8 @@ from django.http import JsonResponse
 from django.contrib import staticfiles
 import json
 import logging
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 
 logger = logging.getLogger(__name__)
 #全局变量
@@ -48,6 +50,16 @@ def about(request):
     news = News.objects.all()
     #置顶新闻排序
     top_news = News.objects.order_by('-top','-datetime')
+    paginator = Paginator(top_news, 7)
+    page = request.GET.get('page','')
+    try:
+        contacts = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        contacts = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        contacts = paginator.page(paginator.num_pages)
     #证书列表
     img_news = top_news[0]
     cers = Com_cer.objects.all()

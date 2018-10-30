@@ -35,6 +35,7 @@ urlpatterns = [
     url(r'^product/(?P<id>[0-9]+)/$',enviews.show_pro_detail,name='show_pro'),
  #   url(r'^captcha/',include('captcha.urls')),
     url(r'^about_us/$', enviews.about),
+    url(r'^about_us/(?P<page>[0-9]+)$', enviews.about),
     url(r'^about_us/exhi/(?P<id>[0-9]+)', enviews.exhi_detail,name='exhi_detail'),
 url(r'^about_us/news/(?P<id>[0-9]+)', enviews.news_detail,name='news_detail'),
     url(r'^email/$', enviews.get_email),

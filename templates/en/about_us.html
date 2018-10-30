@@ -150,19 +150,32 @@
 				<div class="col-md-6 content_left wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.2s">
 					<div class="welcome">
 						<h3>News</h3>
-				{% for news in top_news %}
+				{% for news in contacts  %}
 						<ul>
 							<li>
 								<a href="{% url 'news_detail' news.id %}">{{ news.title }}</a><span class="news-date"> {{ news.datetime }}</span></li>
 						</ul>
 				{% endfor %}
 					</div>
+
+				<div class="clearfix"></div>
+						<ul class="pager">
+							{% if contacts.has_previous %}
+								<li><a href="?page={{ contacts.previous_page_number }}">Previous</a></li>
+							{% else %}
+								<li class="disabled"><a href="#">Previous</a></li>
+							{% endif %}
+							{% if contacts.has_next %}
+							    <li><a href="?page={{ contacts.next_page_number }}">Next</a></li>
+							{% else %}
+								<li class="disabled"><a href="#">Next</a></li>
+							{% endif %}
+					  </ul>
 				</div>
 				<div class="col-md-6 content_right wow flipInY" data-wow-duration="1.5s" data-wow-delay="0.1s" style="margin-top: -128px;">
 					<img class="img-responsive" src="/upload/{{ img_news.picture}}" />
 				</div>
 
-				<div class="clearfix"></div>
 			</div>
 		</div>
 		<!-- //news -->
@@ -189,7 +202,29 @@
 			</div>
 		</div>
 
+<script type="text/javascript ">
+//学员
+var _index5=0;
+$("#four_flash .but_right img ").click(function(){
+	_index5++;
+	var len=$(".flashBg ul.mobile li ").length;
+	if(_index5+5>len){
+		$("#four_flash .flashBg ul.mobile ").stop().append($("ul.mobile ").html());
+	}
+	$("#four_flash .flashBg ul.mobile ").stop().animate({left:-_index5*326},1000);
+	});
 
+
+$("#four_flash .but_left img ").click(function(){
+	if(_index5==0){
+		$("ul.mobile ").prepend($("ul.mobile ").html());
+		$("ul.mobile ").css("left ","-1380px ");
+		_index5=6
+	}
+	_index5--;
+	$("#four_flash .flashBg ul.mobile ").stop().animate({left:-_index5*326},1000);
+	});
+</script>
 
 {% endblock %}
 
